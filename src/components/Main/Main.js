@@ -7,7 +7,7 @@ class Main extends Component {
   render() {
     return (
       <div className="Main">
-        {/* <Header /> */}
+        <Header />
         <p>{this.props.gitstats.name}</p>
         <Footer />
       </div>
