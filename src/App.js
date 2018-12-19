@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import Main from './components/Main/Main';
 
+
 class App extends Component {
   render() {
     return (
