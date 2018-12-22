@@ -16,4 +16,28 @@
         float: left;
         margin-left: 20px;
     }
+
+    .search-input{
+        width: 10%;
+        border-radius: 2px;
+        border: 0;
+        background-color: #3F4448;
+        float: left;
+        margin-left: 18px;
+        font-size: 16px;
+        min-height: 30px;
+        min-width: 200px;
+        margin-top: 7px;
+        padding-left: 7px;
+    }
+
+    .btn-primary{
+        float: left;
+        margin-top: 7px;
+        height: 31px;
+        border-radius: 2px!important;
+        background-color: rgb(46, 49, 51);
+        outline: none!important;
+        border: 0;
+    }
 }
