@@ -17,8 +17,9 @@ class Profile extends Component {
 
 		return (
 			<div className="Profile">
-				{'Username: ' + this.props.gitstats.items.login}
-				{'Full name: ' + this.props.gitstats.items.name}
+				<p>{'Username: ' + this.props.gitstats.items.login}</p>
+				<p>{'Full name: ' + this.props.gitstats.items.name}</p>
+				<p><img src={`${this.props.gitstats.items.avatar_url}`} /></p>
 			</div>
 		);
 	}

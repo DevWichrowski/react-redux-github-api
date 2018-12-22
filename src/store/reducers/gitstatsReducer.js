@@ -1,7 +1,6 @@
 import * as GitStatsAction from '../actions/apiActions';
 
 const initialState = {
-	user: '',
 	items: [],
 	loading: false,
 	error: null
