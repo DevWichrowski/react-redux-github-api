@@ -12,20 +12,20 @@ class Main extends Component {
 	render() {
 		const loading = this.props.gitstats.loading;
 		const error = this.props.gitstats.error;
-		const data = this.props.gitstats.items;
+		// const data = this.props.gitstats.items;
 
 		if (error) {
 			return <div>Error {error.message}</div>;
-    }
+    }     
     
     if(loading) {
       return <div> Loading... </div>
     }
-
+      
 		return (
 			<div className="Main">
 				<Header />
-				<p>{this.props.gitstats.name}</p>
+				{/* <p>Saved username in state: {this.props.gitstatsUser} </p> */}
 					{this.props.gitstats.items.login}
 						
 				<Footer />
@@ -35,7 +35,8 @@ class Main extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	gitstats: state.gitstats
+	gitstats: state.gitstats,
+	gitstatsUser: state.gitstats.user
 });
 
 export default connect(mapStateToProps, null)(Main);

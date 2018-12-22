@@ -1,7 +1,7 @@
 import * as GitStatsAction from '../actions/apiActions';
 
 const initialState = {
-	name: 'Redux connected. Good job.',
+	user: '',
 	items: [],
 	loading: false,
 	error: null
@@ -9,6 +9,9 @@ const initialState = {
 
 export function gitstatsReducer(state = initialState, action) {
 	switch (action.type) {
+		case GitStatsAction.SAVE_USERNAME:{
+			return {...state, user: action.payload}
+		}
 		case GitStatsAction.FETCH_REQUEST: {
 			return {...state, loading: true, error: null}
 		}

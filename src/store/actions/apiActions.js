@@ -1,9 +1,11 @@
 import fetch from 'cross-fetch';
 
+export const SAVE_USERNAME = 'SAVE USERNAME FROM HEADER COMPONENT TO REDUCER'
 export const FETCH_REQUEST = 'REQUEST_POSTS';
 export const FETCH_SUCCESS = 'SUCCESS_POSTS';
 export const FETCH_FAILURE = 'FAIL';
 
+export const saveUsername =  (payload) => ({type: SAVE_USERNAME, payload})
 export const fetchBegin = () => ({ type: FETCH_REQUEST });
 export const fetchSuccess = (payload) => ({
 	type: FETCH_SUCCESS,
