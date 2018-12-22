@@ -18,7 +18,7 @@ export const fetchFailure = (payload) => ({
 export const fetchData = () => {
 	return (dispatch) => {
 		dispatch(fetchBegin());
-		return fetch('https://jsonplaceholder.typicode.com/todos/')
+		return fetch(`http://api.github.com/users/devwichrowski`)
 			.then(handleErrors)
 			.then((res) => res.json())
 			.then((json) => {

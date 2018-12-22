@@ -26,10 +26,7 @@ class Main extends Component {
 			<div className="Main">
 				<Header />
 				<p>{this.props.gitstats.name}</p>
-					
-					{data.map(item => 
-            <p key={item.id}>{item.title}</p>
-						)}
+					{this.props.gitstats.items.login}
 						
 				<Footer />
 			</div>
