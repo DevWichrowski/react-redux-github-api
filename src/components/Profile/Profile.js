@@ -6,6 +6,19 @@ import { Popover } from 'react-bootstrap';
 import './Profile.scss';
 
 class Profile extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			personalPopover: false
+		};
+	}
+
+	togglePersonalPopover = () => {
+		console.log('test');
+		this.setState({ personalPopover: !this.state.personalPopover });
+	};
+
 	render() {
 		const loading = this.props.gitstats.loading;
 		const error = this.props.gitstats.error;
@@ -23,21 +36,6 @@ class Profile extends Component {
 			);
 		}
 
-		const showPersonalInfo = () =>{
-			return (
-			<div style={{ height: 120 }}>
-				<Popover
-				  id="popover-basic"
-				  placement="right"
-				  positionLeft={200}
-				  positionTop={50}
-				  title="Popover right"
-				>
-				  And here's some <strong>amazing</strong> content. It's very engaging. right?
-				</Popover>
-			  </div>);
-		}
-
 		return (
 			<div className="Profile">
 				{this.props.gitstats.personalInfo.login ? (
@@ -46,16 +44,28 @@ class Profile extends Component {
 							<Image
 								src={`${this.props.gitstats.personalInfo.avatar_url}`}
 								className="profil-image"
-								onMouseEnter={() => showPersonalInfo()}
-								onMouseLeave={() => console.log('leave')}
+								onClick={() => this.togglePersonalPopover()}
 								circle
 							/>
+
+							{this.state.personalPopover ? (
+								<div style={{ height: 120 }}>
+									<Popover
+										id="popover-basic"
+										placement="right"
+										positionLeft={100}
+										positionTop={40}
+										title="Personal information"
+									>
+										<p>{this.props.gitstats.personalInfo.name}</p>
+										<p>{this.props.gitstats.personalInfo.company}</p>
+										<p>{this.props.gitstats.personalInfo.location}</p>
+									</Popover>
+								</div>
+							) : null}
 							<p className="username">
-								<strong>{this.props.gitstats.personalInfo.login}</strong>
+								<strong><a href={this.props.gitstats.personalInfo.html_url}>{this.props.gitstats.personalInfo.login}</a></strong>
 							</p>
-							{/* <p>{this.props.gitstats.personalInfo.name}</p>
-							<p>{this.props.gitstats.personalInfo.company}</p>
-							<p>{this.props.gitstats.personalInfo.location}</p> */}
 						</div>
 						<div>
 							<p>
