@@ -17,9 +17,14 @@ class Profile extends Component {
 
 		return (
 			<div className="Profile">
-				<p>{'Username: ' + this.props.gitstats.items.login}</p>
+				{this.props.gitstats.items.login ? (<div>
+					<p>{'Username: ' + this.props.gitstats.items.login}</p>
 				<p>{'Full name: ' + this.props.gitstats.items.name}</p>
 				<p><img src={`${this.props.gitstats.items.avatar_url}`} /></p>
+				</div>) : (<div><h2>
+					Search for user
+					</h2></div>) }
+				
 			</div>
 		);
 	}
