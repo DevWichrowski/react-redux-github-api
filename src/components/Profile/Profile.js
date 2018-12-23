@@ -22,7 +22,7 @@ class Profile extends Component {
 					<div className="personal-data">
 						<div>
 							<Image src={`${this.props.gitstats.items.avatar_url}`} className="profil-image" circle />
-							<p className="full-name">{this.props.gitstats.items.login}</p>
+							<p className="username"><strong>{this.props.gitstats.items.login}</strong></p>
 						</div>
 						<div>
 							{/* <p>{this.props.gitstats.items.name}</p>
