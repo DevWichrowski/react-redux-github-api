@@ -1,7 +1,7 @@
 import * as GitStatsAction from '../actions/apiActions';
 
 const initialState = {
-	items: [],
+	personalInfo: [],
 	loading: false,
 	error: null
 };
@@ -13,10 +13,10 @@ export function gitstatsReducer(state = initialState, action) {
 			return {...state, loading: true, error: null}
 		}
 		case GitStatsAction.FETCH_SUCCESS:  {
-			return {...state, loading: false, items: action.payload}
+			return {...state, loading: false, personalInfo: action.payload}
 		}
 		case GitStatsAction.FETCH_FAILURE: {
-			return {...state, loading: false, error: action.payload.error, items: []}
+			return {...state, loading: false, error: action.payload.error, personalInfo: []}
 		}
 
 		default: {

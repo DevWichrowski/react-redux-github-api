@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Image } from 'react-bootstrap';
+import { Glyphicon } from 'react-bootstrap';
 import './Profile.scss';
 
 class Profile extends Component {
@@ -18,16 +19,18 @@ class Profile extends Component {
 
 		return (
 			<div className="Profile">
-				{this.props.gitstats.items.login ? (
+				{this.props.gitstats.personalInfo.login ? (
 					<div className="personal-data">
 						<div>
-							<Image src={`${this.props.gitstats.items.avatar_url}`} className="profil-image" circle />
-							<p className="username"><strong>{this.props.gitstats.items.login}</strong></p>
+							<Image src={`${this.props.gitstats.personalInfo.avatar_url}`} className="profil-image" circle />
+							<p className="username"><strong>{this.props.gitstats.personalInfo.login}</strong></p>
+								{/* <p>{this.props.gitstats.personalInfo.name}</p>
+							<p>{this.props.gitstats.personalInfo.company}</p>
+							<p>{this.props.gitstats.personalInfo.location}</p> */}
 						</div>
 						<div>
-							{/* <p>{this.props.gitstats.items.name}</p>
-							<p>{this.props.gitstats.items.company}</p>
-							<p>{this.props.gitstats.items.location}</p> */}
+							<p><Glyphicon glyph="user" />Followers {this.props.gitstats.personalInfo.followers}</p>
+							<p><Glyphicon glyph="user" />Following {this.props.gitstats.personalInfo.following}</p>
 						</div>
 					</div>
 				) : (
