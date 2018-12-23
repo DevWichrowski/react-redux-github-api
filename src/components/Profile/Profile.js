@@ -13,18 +13,22 @@ class Profile extends Component {
 		}
 
 		if (loading) {
-			return <div> Loading... </div>;
+			return <div> <h2>Loading... </h2></div>;
 		}
 
 		return (
 			<div className="Profile">
 				{this.props.gitstats.items.login ? (
-					<div>
-						<p>{'Username: ' + this.props.gitstats.items.login}</p>
-						<p>{'Full name: ' + this.props.gitstats.items.name}</p>
-						<p>
-							<Image src={`${this.props.gitstats.items.avatar_url}`} circle />
-						</p>
+					<div className="personal-data">
+						<div>
+							<Image src={`${this.props.gitstats.items.avatar_url}`} className="profil-image" circle />
+							<p className="full-name">{this.props.gitstats.items.login}</p>
+						</div>
+						<div>
+							{/* <p>{this.props.gitstats.items.name}</p>
+							<p>{this.props.gitstats.items.company}</p>
+							<p>{this.props.gitstats.items.location}</p> */}
+						</div>
 					</div>
 				) : (
 					<div>

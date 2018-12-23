@@ -15,6 +15,9 @@ class Header extends Component {
 		};
 	}
 
+	componentDidMount(){
+		this.props.dispatch(fetchData('devwichrowski'));
+	}
 	searchForUser = () => {
 		console.log('Username' + this.state.username);
 		this.props.dispatch(fetchData(this.state.username));
