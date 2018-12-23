@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Image } from 'react-bootstrap';
 import './Profile.scss';
 
 class Profile extends Component {
@@ -17,14 +18,19 @@ class Profile extends Component {
 
 		return (
 			<div className="Profile">
-				{this.props.gitstats.items.login ? (<div>
-					<p>{'Username: ' + this.props.gitstats.items.login}</p>
-				<p>{'Full name: ' + this.props.gitstats.items.name}</p>
-				<p><img src={`${this.props.gitstats.items.avatar_url}`} /></p>
-				</div>) : (<div><h2>
-					Search for user
-					</h2></div>) }
-				
+				{this.props.gitstats.items.login ? (
+					<div>
+						<p>{'Username: ' + this.props.gitstats.items.login}</p>
+						<p>{'Full name: ' + this.props.gitstats.items.name}</p>
+						<p>
+							<Image src={`${this.props.gitstats.items.avatar_url}`} circle />
+						</p>
+					</div>
+				) : (
+					<div>
+						<h2>Search for user</h2>
+					</div>
+				)}
 			</div>
 		);
 	}
