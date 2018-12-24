@@ -10,18 +10,33 @@ class Profile extends Component {
 		super(props);
 
 		this.state = {
-			personalPopover: false
+			personalPopoverVisible: false
 		};
 	}
 
 	togglePersonalPopover = () => {
-		console.log('test');
-		this.setState({ personalPopover: !this.state.personalPopover });
+		this.setState({ personalPopoverVisible: !this.state.personalPopoverVisible });
 	};
 
 	render() {
 		const loading = this.props.gitstats.loading;
 		const error = this.props.gitstats.error;
+
+		const personalPopoverr = (
+			<div>
+				<Popover
+					id="popover-basic"
+					placement="right"
+					positionLeft={80}
+					positionTop={40}
+					title="Personal information"
+				>
+					<p>{this.props.gitstats.personalInfo.name}</p>
+					<p>{this.props.gitstats.personalInfo.company}</p>
+					<p>{this.props.gitstats.personalInfo.location}</p>
+				</Popover>
+			</div>
+		);
 
 		if (error) {
 			return <div>Error {error.message}</div>;
@@ -48,23 +63,13 @@ class Profile extends Component {
 								circle
 							/>
 
-							{this.state.personalPopover ? (
-								<div style={{ height: 120 }}>
-									<Popover
-										id="popover-basic"
-										placement="right"
-										positionLeft={100}
-										positionTop={40}
-										title="Personal information"
-									>
-										<p>{this.props.gitstats.personalInfo.name}</p>
-										<p>{this.props.gitstats.personalInfo.company}</p>
-										<p>{this.props.gitstats.personalInfo.location}</p>
-									</Popover>
-								</div>
-							) : null}
+							{this.state.personalPopoverVisible ? personalPopoverr : null}
 							<p className="username">
-								<strong><a href={this.props.gitstats.personalInfo.html_url}>{this.props.gitstats.personalInfo.login}</a></strong>
+								<strong>
+									<a href={this.props.gitstats.personalInfo.html_url}>
+										{this.props.gitstats.personalInfo.login}
+									</a>
+								</strong>
 							</p>
 						</div>
 						<div>
