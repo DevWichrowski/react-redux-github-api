@@ -19,8 +19,8 @@ class Profile extends Component {
 	};
 
 	render() {
-		const loading = this.props.gitstats.loading;
-		const error = this.props.gitstats.error;
+		const loading = this.props.personalInfo.loading;
+		const error = this.props.personalInfo.error;
 
 		const personalPopoverr = (
 			<div>
@@ -31,9 +31,9 @@ class Profile extends Component {
 					positionTop={40}
 					title="Personal information"
 				>
-					<p>{this.props.gitstats.personalInfo.name}</p>
-					<p>{this.props.gitstats.personalInfo.company}</p>
-					<p>{this.props.gitstats.personalInfo.location}</p>
+					<p>{this.props.personalInfo.personalInfoArr.name}</p>
+					<p>{this.props.personalInfo.personalInfoArr.company}</p>
+					<p>{this.props.personalInfo.personalInfoArr.location}</p>
 				</Popover>
 			</div>
 		);
@@ -53,11 +53,11 @@ class Profile extends Component {
 
 		return (
 			<div className="Profile">
-				{this.props.gitstats.personalInfo.login ? (
+				{this.props.personalInfo.personalInfoArr.login ? (
 					<div className="personal-data">
 						<div>
 							<Image
-								src={`${this.props.gitstats.personalInfo.avatar_url}`}
+								src={`${this.props.personalInfo.personalInfoArr.avatar_url}`}
 								className="profil-image"
 								onClick={() => this.togglePersonalPopover()}
 								circle
@@ -66,18 +66,18 @@ class Profile extends Component {
 							{this.state.personalPopoverVisible ? personalPopoverr : null}
 							<p className="username">
 								<strong>
-									<a href={this.props.gitstats.personalInfo.html_url}>
-										{this.props.gitstats.personalInfo.login}
+									<a href={this.props.personalInfo.personalInfoArr.html_url}>
+										{this.props.personalInfo.personalInfoArr.login}
 									</a>
 								</strong>
 							</p>
 						</div>
 						<div>
 							<p>
-								<Glyphicon glyph="user" />Followers {this.props.gitstats.personalInfo.followers}
+								<Glyphicon glyph="user" />Followers {this.props.personalInfo.personalInfoArr.followers}
 							</p>
 							<p>
-								<Glyphicon glyph="user" />Following {this.props.gitstats.personalInfo.following}
+								<Glyphicon glyph="user" />Following {this.props.personalInfo.personalInfoArr.following}
 							</p>
 						</div>
 					</div>
@@ -92,7 +92,7 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	gitstats: state.gitstats
+	personalInfo: state.personalInfo
 });
 
 export default connect(mapStateToProps, null)(Profile);

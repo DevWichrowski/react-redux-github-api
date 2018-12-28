@@ -15,7 +15,7 @@ class Header extends Component {
 		};
 	}
 
-	componentDidMount(){
+	componentDidMount() {
 		this.props.dispatch(fetchData('devwichrowski'));
 	}
 	searchForUser = () => {
@@ -37,7 +37,10 @@ class Header extends Component {
 				<input className="search-input" onChange={this.saveUserInState} />
 				<Button
 					bsStyle="primary"
-					onClick={() => {this.searchForUser()}}>
+					onClick={() => {
+						this.searchForUser();
+					}}
+				>
 					Search
 				</Button>
 			</div>
@@ -50,8 +53,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-	gitstats: state.gitstats,
-	user: state.gitstats.user
+	personalInfo: state.personalInfo
+	// user: state.personalInfoArr.user
 });
 
 export default connect(mapStateToProps, null)(Header);
