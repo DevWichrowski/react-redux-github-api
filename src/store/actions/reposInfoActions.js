@@ -29,3 +29,11 @@ export const fetchData = (user) => {
 			.catch((error) => dispatch(fetchFailure(error)));
 	};
 };
+
+// Handle HTTP errors since fetch won't.
+const handleErrors = (response) => {
+	if (!response.ok) {
+		throw Error(response.statusText);
+	}
+	return response;
+};
