@@ -4,7 +4,10 @@ import './RepoBox.scss';
 class RepoBox extends Component {
 	render() {
 		return (
-			<div>
+			<div className="RepoBox">
+				<p>repobox</p>
+				<p>repobox</p>
+				<p>repobox</p>
 				<p>repobox</p>
 			</div>
 		);

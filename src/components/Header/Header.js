@@ -4,7 +4,8 @@ import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
 import { saveUsername } from '../../store/actions/personalInfoActions';
 import { Button } from 'react-bootstrap';
-import { fetchData } from '../../store/actions/personalInfoActions';
+import { fetchPersonalData } from '../../store/actions/personalInfoActions';
+import { fetchReposData } from '../../store/actions/personalInfoActions';
 
 class Header extends Component {
 	constructor(props) {
@@ -16,11 +17,12 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
-		this.props.dispatch(fetchData('devwichrowski'));
+		this.props.dispatch(fetchPersonalData('devwichrowski'));
+		this.props.dispatch(fetchReposData('devwichrowski'));
 	}
 	searchForUser = () => {
 		console.log('Username' + this.state.username);
-		this.props.dispatch(fetchData(this.state.username));
+		this.props.dispatch(fetchPersonalData(this.state.username));
 	};
 
 	saveUserInState = (e) => {
@@ -53,8 +55,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-	personalInfo: state.personalInfo
-	// user: state.personalInfoArr.user
+	personalInfo: state.personalInfo,
+	repoList: state.personalInfo.reposInfo
 });
 
 export default connect(mapStateToProps, null)(Header);

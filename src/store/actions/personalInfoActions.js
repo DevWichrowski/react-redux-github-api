@@ -17,10 +17,25 @@ export const fetchFailure = (payload) => ({
 	payload
 });
 
-export const fetchData = (user) => {
+export const fetchPersonalData = (user) => {
 	return (dispatch) => {
 		dispatch(fetchBegin());
 		return fetch(`http://api.github.com/users/${user}`)
+			.then(handleErrors)
+			.then((res) => res.json())
+			.then((json) => {
+				console.log(json);
+				dispatch(fetchSuccess(json));
+				return json;
+			})
+			.catch((error) => dispatch(fetchFailure(error)));
+	};
+};
+
+export const fetchReposData = (user) => {
+	return (dispatch) => {
+		dispatch(fetchBegin());
+		return fetch(`http://api.github.com/users/${user}/repos`)
 			.then(handleErrors)
 			.then((res) => res.json())
 			.then((json) => {
