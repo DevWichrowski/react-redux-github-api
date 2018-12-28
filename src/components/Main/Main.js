@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Profile from '../Profile/Profile';
+import ReposContainer from '../ReposContainer/ReposContainer';
 
 
 class Main extends Component {
@@ -10,6 +11,7 @@ class Main extends Component {
 			<div className="Main">
 				<Header />
 				<Profile />
+				<ReposContainer />
 				<Footer />
 			</div>
 		);
