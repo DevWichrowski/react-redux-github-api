@@ -1,4 +1,4 @@
-import * as GitStatsAction from '../actions/apiActions';
+import * as GitStatsAction from '../actions/personalInfoActions';
 
 const initialState = {
 	personalInfo: [],

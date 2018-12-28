@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
-import { saveUsername } from '../../store/actions/apiActions';
+import { saveUsername } from '../../store/actions/personalInfoActions';
 import { Button } from 'react-bootstrap';
-import { fetchData } from '../../store/actions/apiActions';
+import { fetchData } from '../../store/actions/personalInfoActions';
 
 class Header extends Component {
 	constructor(props) {
