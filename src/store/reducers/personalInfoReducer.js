@@ -6,7 +6,7 @@ const initialState = {
 	error: null
 };
 
-export function gitstatsReducer(state = initialState, action) {
+export function personalInfoReducer(state = initialState, action) {
 	switch (action.type) {
 
 		case GitStatsAction.FETCH_REQUEST: {

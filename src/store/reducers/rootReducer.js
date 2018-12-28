@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { gitstatsReducer } from './gitstatsReducer';
+import { personalInfoReducer } from './personalInfoReducer';
 
-export const rootReducer = combineReducers({ gitstats: gitstatsReducer });
+export const rootReducer = combineReducers({ gitstats: personalInfoReducer });
