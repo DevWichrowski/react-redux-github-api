@@ -1,11 +1,9 @@
 import fetch from 'cross-fetch';
 
-export const SAVE_USERNAME = 'SAVE USERNAME FROM HEADER COMPONENT TO REDUCER'
-export const FETCH_REQUEST = '[personalInfoAction] - REQUEST_POSTS';
-export const FETCH_SUCCESS = '[personalInfoAction] - SUCCESS_POSTS';
-export const FETCH_FAILURE = '[personalInfoAction] - FAIL';
+export const FETCH_REQUEST = '[reposInfoAction] - REQUEST_POSTS';
+export const FETCH_SUCCESS = '[reposInfoAction] - SUCCESS_POSTS';
+export const FETCH_FAILURE = '[reposInfoAction] - FAIL';
 
-export const saveUsername =  (payload) => ({type: SAVE_USERNAME, payload})
 export const fetchBegin = () => ({ type: FETCH_REQUEST });
 export const fetchSuccess = (payload) => ({
 	type: FETCH_SUCCESS,
@@ -17,10 +15,10 @@ export const fetchFailure = (payload) => ({
 	payload
 });
 
-export const fetchPersonalData = (user) => {
+export const fetchReposData = (user) => {
 	return (dispatch) => {
 		dispatch(fetchBegin());
-		return fetch(`http://api.github.com/users/${user}`)
+		return fetch(`http://api.github.com/users/${user}/repos`)
 			.then(handleErrors)
 			.then((res) => res.json())
 			.then((json) => {

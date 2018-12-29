@@ -5,7 +5,7 @@ import GithubLogo from '../../assets/github-white.png';
 import { saveUsername } from '../../store/actions/personalInfoActions';
 import { Button } from 'react-bootstrap';
 import { fetchPersonalData } from '../../store/actions/personalInfoActions';
-import { fetchReposData } from '../../store/actions/personalInfoActions';
+import { fetchReposData } from '../../store/actions/reposInfoAction';
 
 class Header extends Component {
 	constructor(props) {
