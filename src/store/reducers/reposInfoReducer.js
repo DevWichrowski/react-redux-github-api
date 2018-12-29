@@ -1,4 +1,4 @@
-import * as PersonalInfoAction from '../actions/personalInfoActions';
+import * as ReposInfoAction from '../actions/reposInfoAction';
 
 const initialState = {
 	reposInfoArr: [],
@@ -9,14 +9,14 @@ const initialState = {
 export function reposInfoReducer(state = initialState, action) {
 	switch (action.type) {
 
-		case PersonalInfoAction.FETCH_REQUEST: {
+		case ReposInfoAction.FETCH_REQUEST: {
 			return {...state, loading: true, error: null}
 		}
-		case PersonalInfoAction.FETCH_SUCCESS:  {
-			return {...state, loading: false, reposInfo: action.payload}
+		case ReposInfoAction.FETCH_SUCCESS:  {
+			return {...state, loading: false, reposInfoArr: action.payload}
 		}
-		case PersonalInfoAction.FETCH_FAILURE: {
-			return {...state, loading: false, error: action.payload.error, reposInfo: []}
+		case ReposInfoAction.FETCH_FAILURE: {
+			return {...state, loading: false, error: action.payload.error, reposInfoArr: []}
 		}
 
 		default: {

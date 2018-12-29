@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import './RepoBox.scss';
+import { fetchReposData } from '../../store/actions/reposInfoAction';
+import { connect } from 'react-redux';
 
 class RepoBox extends Component {
+	componentDidMount() {
+		this.props.dispatch(fetchReposData('devwichrowski'));
+	}
+
 	render() {
 		return (
 			<div className="RepoBox">
-				<p>repobox</p>
-				<p>repobox</p>
-				<p>repobox</p>
-				<p>repobox</p>
+				{this.props.reposInfo.reposInfoArr.map((repo, index) =>{
+					return(
+					<div key={index}>
+						<h3>{repo.name}</h3>
+					</div>);
+				})}
 			</div>
 		);
 	}
 }
 
-export default RepoBox;
+const mapStateToProps = (state) => ({
+	reposInfo: state.reposInfo
+});
+
+export default connect(mapStateToProps, null)(RepoBox);
