@@ -21,7 +21,7 @@ class Profile extends Component {
 	render() {
 		const loading = this.props.personalInfo.loading;
 		const error = this.props.personalInfo.error;
-
+		const personalData = this.props.personalInfo.personalInfoArr;
 		const personalPopoverr = (
 			<div>
 				<Popover
@@ -31,9 +31,30 @@ class Profile extends Component {
 					positionTop={40}
 					title="Personal information"
 				>
-					<p>{this.props.personalInfo.personalInfoArr.name}</p>
-					<p>{this.props.personalInfo.personalInfoArr.company}</p>
-					<p>{this.props.personalInfo.personalInfoArr.location}</p>
+					{personalData.name !== null ? (
+						<p>
+							<Glyphicon glyph="user" />
+							{personalData.name}
+						</p>
+					) : null}
+					{personalData.company !== null ? (
+						<p>
+							<Glyphicon glyph="lock" />
+							{personalData.company}
+						</p>
+					) : null}
+					{personalData.location !== null ? (
+						<p>
+							<Glyphicon glyph="home" />
+							{personalData.location}
+						</p>
+					) : null}
+					{personalData.email !== null ? (
+						<p>
+							<Glyphicon glyph="envelope" />
+							{personalData.email}
+						</p>
+					) : null}
 				</Popover>
 			</div>
 		);
@@ -74,10 +95,12 @@ class Profile extends Component {
 						</div>
 						<div>
 							<p>
-								<Glyphicon glyph="user" />Followers {this.props.personalInfo.personalInfoArr.followers}
+								<Glyphicon glyph="chevron-down" />Followers{' '}
+								{this.props.personalInfo.personalInfoArr.followers}
 							</p>
 							<p>
-								<Glyphicon glyph="user" />Following {this.props.personalInfo.personalInfoArr.following}
+								<Glyphicon glyph="chevron-up" />Following{' '}
+								{this.props.personalInfo.personalInfoArr.following}
 							</p>
 						</div>
 					</div>
