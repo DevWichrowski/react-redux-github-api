@@ -76,7 +76,7 @@ class Profile extends Component {
 			<div className="Profile">
 				{this.props.personalInfo.personalInfoArr.login ? (
 					<div className="personal-data">
-						<div>
+						<div className="user-image">
 							<Image
 								src={`${this.props.personalInfo.personalInfoArr.avatar_url}`}
 								className="profil-image"
@@ -93,7 +93,7 @@ class Profile extends Component {
 								</strong>
 							</p>
 						</div>
-						<div>
+						<div className="follows">
 							<p>
 								<Glyphicon glyph="chevron-down" />Followers{' '}
 								{this.props.personalInfo.personalInfoArr.followers}
