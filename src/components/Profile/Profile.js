@@ -74,11 +74,11 @@ class Profile extends Component {
 
 		return (
 			<div className="Profile">
-				{this.props.personalInfo.personalInfoArr.login ? (
+				{personalData.login ? (
 					<div className="personal-data">
 						<div className="user-image">
 							<Image
-								src={`${this.props.personalInfo.personalInfoArr.avatar_url}`}
+								src={`${personalData.avatar_url}`}
 								className="profil-image"
 								onClick={() => this.togglePersonalPopover()}
 								circle
@@ -87,8 +87,8 @@ class Profile extends Component {
 							{this.state.personalPopoverVisible ? personalPopoverr : null}
 							<p className="username">
 								<strong>
-									<a href={this.props.personalInfo.personalInfoArr.html_url}>
-										{this.props.personalInfo.personalInfoArr.login}
+									<a href={personalData.html_url}>
+										{personalData.login}
 									</a>
 								</strong>
 							</p>
@@ -96,21 +96,21 @@ class Profile extends Component {
 						<div className="follows">
 							<p>
 								<Glyphicon glyph="chevron-down" />Followers{' '}
-								{this.props.personalInfo.personalInfoArr.followers}
+								{personalData.followers}
 							</p>
 							<p>
 								<Glyphicon glyph="chevron-up" />Following{' '}
-								{this.props.personalInfo.personalInfoArr.following}
+								{personalData.following}
 							</p>
 						</div>
 							<div className="repo-gits">
 							<p>
 								<Glyphicon glyph="chevron-down" />Gits{' '}
-								{this.props.personalInfo.personalInfoArr.public_gists}
+								{personalData.public_gists}
 							</p>
 							<p>
 								<Glyphicon glyph="chevron-up" />Repos{' '}
-								{this.props.personalInfo.personalInfoArr.public_repos}
+								{personalData.public_repos}
 							</p>
 							</div>
 					</div>
