@@ -103,7 +103,18 @@ class Profile extends Component {
 								{this.props.personalInfo.personalInfoArr.following}
 							</p>
 						</div>
+							<div className="repo-gits">
+							<p>
+								<Glyphicon glyph="chevron-down" />Gits{' '}
+								{this.props.personalInfo.personalInfoArr.public_gists}
+							</p>
+							<p>
+								<Glyphicon glyph="chevron-up" />Repos{' '}
+								{this.props.personalInfo.personalInfoArr.public_repos}
+							</p>
+							</div>
 					</div>
+				
 				) : (
 					<div>
 						<h2>Search for user</h2>
