@@ -33,25 +33,25 @@ class Profile extends Component {
 				>
 					{personalData.name !== null ? (
 						<p>
-							<Glyphicon glyph="user" />
+							<Glyphicon className="stats-icons" glyph="user" />
 							{personalData.name}
 						</p>
 					) : null}
 					{personalData.company !== null ? (
 						<p>
-							<Glyphicon glyph="lock" />
+							<Glyphicon className="stats-icons" glyph="lock" />
 							{personalData.company}
 						</p>
 					) : null}
 					{personalData.location !== null ? (
 						<p>
-							<Glyphicon glyph="home" />
+							<Glyphicon className="stats-icons" glyph="map-marker" />
 							{personalData.location}
 						</p>
 					) : null}
 					{personalData.email !== null ? (
 						<p>
-							<Glyphicon glyph="envelope" />
+							<Glyphicon className="stats-icons" glyph="envelope" />
 							{personalData.email}
 						</p>
 					) : null}
@@ -95,24 +95,26 @@ class Profile extends Component {
 						</div>
 						<div className="follows">
 							<p>
-								<Glyphicon glyph="chevron-down" />Followers{' '}
+								<Glyphicon className="stats-icons" glyph="chevron-down" />Followers{' '}
 								{personalData.followers}
 							</p>
 							<p>
-								<Glyphicon glyph="chevron-up" />Following{' '}
+								<Glyphicon className="stats-icons" glyph="chevron-up" />Following{' '}
 								{personalData.following}
 							</p>
-						</div>
-							<div className="repo-gits">
 							<p>
-								<Glyphicon glyph="chevron-down" />Gits{' '}
+								<Glyphicon className="stats-icons" glyph="th-large" />Repos{' '}
+								{personalData.public_repos}
+							</p>
+							<p>
+								<Glyphicon className="stats-icons" glyph="list-alt" />Gits{' '}
 								{personalData.public_gists}
 							</p>
 							<p>
-								<Glyphicon glyph="chevron-up" />Repos{' '}
-								{personalData.public_repos}
+								<Glyphicon className="stats-icons" glyph="star" />Starred repos{' '}
+								{personalData.public_gists}
 							</p>
-							</div>
+						</div>
 					</div>
 				
 				) : (
