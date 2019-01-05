@@ -4,7 +4,7 @@ import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
 import { saveUsername } from '../../store/actions/personalInfoActions';
 import { Button } from 'react-bootstrap';
-import { fetchPersonalData } from '../../store/actions/personalInfoActions';
+import { fetchPersonalData, getUser} from '../../store/actions/personalInfoActions';
 
 class Header extends Component {
 	constructor(props) {
@@ -16,7 +16,8 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
-		this.props.dispatch(fetchPersonalData('devwichrowski'));
+		//this.props.dispatch(fetchPersonalData('devwichrowski'));
+		this.props.dispatch(getUser('DamianBusz'))
 	}
 	searchForUser = () => {
 		console.log('Username' + this.state.username);
