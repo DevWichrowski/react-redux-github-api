@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './RepoBox.scss';
+import { Badge } from 'react-bootstrap';
 
 class RepoBox extends Component {
 	constructor(props) {
@@ -9,9 +10,9 @@ class RepoBox extends Component {
 	render() {
 		return (
 			<div className="RepoBox">
-				<p>{this.props.name}</p>
+				<h3>{this.props.name}</h3>
 				<p>{this.props.description}</p>
-				<p>{this.props.devLang}</p>
+				<Badge>{this.props.devLang}</Badge>
 			</div>
 		);
 	}

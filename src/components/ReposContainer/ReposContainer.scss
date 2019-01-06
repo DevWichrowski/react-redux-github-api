@@ -1,3 +1,6 @@
 .ReposContainer{
-    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
