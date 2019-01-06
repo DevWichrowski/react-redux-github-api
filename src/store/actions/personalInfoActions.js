@@ -27,21 +27,6 @@ export const getPersonalInfo = (name) => ({
 	name
 })
 
-export const fetchPersonalData = (user) => {
-	return (dispatch) => {
-		dispatch(fetchBegin());
-		return fetch(`http://api.github.com/users/${user}`)
-			.then(handleErrors)
-			.then((res) => res.json())
-			.then((json) => {
-				console.log(json);
-				dispatch(fetchSuccess(json));
-				return json;
-			})
-			.catch((error) => dispatch(fetchFailure(error)));
-	};
-};
-
 // Handle HTTP errors since fetch won't.
 const handleErrors = (response) => {
 	if (!response.ok) {

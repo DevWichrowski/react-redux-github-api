@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 class ReposContainer extends Component {
 	componentDidMount() {
-		this.props.dispatch(fetchReposData('devwichrowski'));
+		// this.props.dispatch(fetchReposData('devwichrowski'));
 	}
 
 	render() {
