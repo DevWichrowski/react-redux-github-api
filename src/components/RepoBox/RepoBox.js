@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './RepoBox.scss';
-import { Badge } from 'react-bootstrap';
 
 class RepoBox extends Component {
 	constructor(props) {
@@ -11,8 +10,9 @@ class RepoBox extends Component {
 		return (
 			<div className="RepoBox">
 				<h3>{this.props.name}</h3>
+				<div className='dived-badge'>{this.props.devLang}</div>
+
 				<p>{this.props.description}</p>
-				<Badge>{this.props.devLang}</Badge>
 			</div>
 		);
 	}
