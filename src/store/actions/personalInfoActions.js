@@ -22,6 +22,11 @@ export const fetchFailure = (payload) => ({
 // 	name
 // })
 
+export const getPersonalInfo = (name) => ({
+	type: 'GET_PERSONAL_INFO',
+	name
+})
+
 export const fetchPersonalData = (user) => {
 	return (dispatch) => {
 		dispatch(fetchBegin());
