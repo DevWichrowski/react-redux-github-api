@@ -1,7 +1,6 @@
 import * as PersonalInfoAction from '../actions/personalInfoActions';
 
 const initialState = {
-	name: 'DamianBusz',
 	personalInfoArr: [],
 	loading: false,
 	error: null

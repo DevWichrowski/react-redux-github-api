@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './ReposContainer.scss';
 import RepoBox from '../RepoBox/RepoBox';
-import { fetchReposData } from '../../store/actions/reposInfoAction';
+import { getRepos } from '../../store/actions/reposInfoAction';
 import { connect } from 'react-redux';
 
 
 class ReposContainer extends Component {
 	componentDidMount() {
 		// this.props.dispatch(fetchReposData('devwichrowski'));
+		this.props.dispatch(getRepos('devwichrowski'));
 	}
 
 	render() {

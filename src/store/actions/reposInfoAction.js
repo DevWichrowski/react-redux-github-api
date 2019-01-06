@@ -13,6 +13,11 @@ export const fetchFailure = (payload) => ({
 	payload
 });
 
+export const getRepos = (paylaod) => ({
+	type: 'GET_REPOS',
+	paylaod
+})
+
 // Handle HTTP errors since fetch won't.
 const handleErrors = (response) => {
 	if (!response.ok) {

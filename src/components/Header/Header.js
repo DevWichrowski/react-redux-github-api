@@ -15,7 +15,7 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
-		this.props.dispatch(getPersonalInfo('DamianBusz'));
+		this.props.dispatch(getPersonalInfo('DevWichrowski'));
 	}
 
 	saveUserInState = (e) => {
