@@ -17,10 +17,10 @@ export const fetchFailure = (payload) => ({
 	payload
 });
 
-export const getUser = (name) => ({
-	type:'GET_USER',
-	name
-})
+// export const getUser = (name) => ({
+// 	type:'GET_USER',
+// 	name
+// })
 
 export const fetchPersonalData = (user) => {
 	return (dispatch) => {
