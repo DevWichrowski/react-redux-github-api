@@ -11,8 +11,8 @@ class RepoBox extends Component {
 			<div className="RepoBox">
 				<h3>{this.props.name}</h3>
 				<div className='dived-badge'>{this.props.devLang}</div>
-
-				<p>{this.props.description}</p>
+					{this.props.description !== null ? <p>{this.props.description}</p> : <p> no description :(</p> }
+				
 			</div>
 		);
 	}
