@@ -17,7 +17,7 @@ class ReposContainer extends Component {
 				{this.props.reposInfo.reposInfoArr.map((repo, index) =>{
 					return(
 					<div key={index}>
-						<RepoBox name={repo.name} description={repo.description} devLang={repo.language}/>
+						<RepoBox name={repo.name} description={repo.description} devLang={repo.language} lastUpdate={repo.updated_at}/>
 					</div>);
 				})}
 			</div>
