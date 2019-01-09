@@ -4,6 +4,7 @@ import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
 import { Button } from 'react-bootstrap';
 import { getPersonalInfo} from '../../store/actions/personalInfoActions';
+import { getFollowersInfo} from '../../store/actions/followersInfoAction';
 
 class Header extends Component {
 	constructor(props) {
@@ -16,6 +17,7 @@ class Header extends Component {
 
 	componentDidMount() {
 		this.props.dispatch(getPersonalInfo('DevWichrowski'));
+		this.props.dispatch(getFollowersInfo('DevWichrowski'));
 	}
 
 	saveUserInState = (e) => {
