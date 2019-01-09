@@ -18,11 +18,6 @@ export const getFollowersInfo = (payload) =>({
 	payload
 })
 
-export const getPersonalInfo = (paylaod) => ({
-	type: 'GET_PERSONAL_INFO',
-	paylaod
-})
-
 // Handle HTTP errors since fetch won't.
 const handleErrors = (response) => {
 	if (!response.ok) {
