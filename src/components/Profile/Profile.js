@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Image } from 'react-bootstrap';
 import { Glyphicon } from 'react-bootstrap';
 import { Popover } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import './Profile.scss';
 
 class Profile extends Component {
@@ -87,28 +88,29 @@ class Profile extends Component {
 							{this.state.personalPopoverVisible ? personalPopoverr : null}
 							<p className="username">
 								<strong>
-									<a href={personalData.html_url}>
-										{personalData.login}
-									</a>
+									<a href={personalData.html_url}>{personalData.login}</a>
 								</strong>
 							</p>
 						</div>
 						<div className="follows">
-							<p>
-								<Glyphicon className="stats-icons" glyph="chevron-down" />Followers{' '}
-								{personalData.followers}
-							</p>
+							<NavLink to="/followers">
+								<p>
+									<Glyphicon className="stats-icons" glyph="chevron-down" />Followers{' '}
+									{personalData.followers}
+								</p>
+							</NavLink>
 							<p>
 								<Glyphicon className="stats-icons" glyph="chevron-up" />Following{' '}
 								{personalData.following}
 							</p>
+							<NavLink to="/">
+								<p>
+									<Glyphicon className="stats-icons" glyph="th-large" />Repos{' '}
+									{personalData.public_repos}
+								</p>
+							</NavLink>
 							<p>
-								<Glyphicon className="stats-icons" glyph="th-large" />Repos{' '}
-								{personalData.public_repos}
-							</p>
-							<p>
-								<Glyphicon className="stats-icons" glyph="list-alt" />Gits{' '}
-								{personalData.public_gists}
+								<Glyphicon className="stats-icons" glyph="list-alt" />Gits {personalData.public_gists}
 							</p>
 							<p>
 								<Glyphicon className="stats-icons" glyph="star" />Starred repos{' '}
@@ -116,7 +118,6 @@ class Profile extends Component {
 							</p>
 						</div>
 					</div>
-				
 				) : (
 					<div>
 						<h2>Search for user</h2>
