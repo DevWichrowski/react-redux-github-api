@@ -6,7 +6,6 @@ export default class FollowersContainer extends Component {
 		return (
 			<div clasName="FollowersContainer">
 				<h1>Followers</h1>
-                
 			</div>
 		);
 	}
