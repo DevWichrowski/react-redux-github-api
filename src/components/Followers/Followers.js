@@ -8,11 +8,12 @@ class Followers extends Component {
 		const followersApi = this.props.followersInfo.followersInfoArr;
 		return (
 			<div className="Followers">
-			<h1>Followers</h1>
+				<h1>Followers</h1>
 				{followersApi.map((followers, index) => {
+					
 					return (
 						<div key={index}>
-							<User />
+							<User login={followers.login} avatar={followers.avatar_url} profile={followers.html_url} />
 						</div>
 					);
 				})}
@@ -21,7 +22,6 @@ class Followers extends Component {
 	}
 }
 
-// export default connect(mapStateToProps, null)(ReposContainer);
 const mapStateToProps = (state) => ({
 	followersInfo: state.followersInfo
 });

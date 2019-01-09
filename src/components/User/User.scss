@@ -1,6 +1,25 @@
-.User{
-    border: 1px solid black;
-    background-color: black;
+.User {
+    background-color: #24292eef;
     color: white;
     margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+
+    .profil-image {
+        height: 100px;
+        widows: 100px;
+        margin: 10px 0;
+    }
+
+    .image-left {
+        width: 15%;
+    }
+
+    .infos-right {
+        width: 75%;
+    }
+
+    -webkit-box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
 }
