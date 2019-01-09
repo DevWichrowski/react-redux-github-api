@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import './FollowersContainer.scss';
-import FollowersBox from '../FollowersBox/FollowersBox';
+import './Followers.scss';
 
 export default class FollowersContainer extends Component {
 	render() {
 		return (
 			<div clasName="FollowersContainer">
-				<h1>Follwoers Container</h1>
-                <FollowersBox />
+				<h1>Followers</h1>
+                
 			</div>
 		);
 	}
