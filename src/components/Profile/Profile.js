@@ -4,6 +4,7 @@ import { Image } from 'react-bootstrap';
 import { Glyphicon } from 'react-bootstrap';
 import { Popover } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { getFollowersInfo } from '../../store/actions/followersInfoAction';
 import './Profile.scss';
 
 class Profile extends Component {
@@ -94,7 +95,7 @@ class Profile extends Component {
 						</div>
 						<div className="follows">
 							<NavLink to="/followers">
-								<p>
+								<p onClick={() => this.props.getFollowers(this.props.personalInfo.username)}>
 									<Glyphicon className="stats-icons" glyph="chevron-down" />Followers{' '}
 									{personalData.followers}
 								</p>
@@ -128,8 +129,12 @@ class Profile extends Component {
 	}
 }
 
+const mapDispatchToProps = (dispatch) => ({
+	getFollowers: (payload) => dispatch(getFollowersInfo(payload))
+});
+
 const mapStateToProps = (state) => ({
 	personalInfo: state.personalInfo
 });
 
-export default connect(mapStateToProps, null)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -1,8 +1,8 @@
 import { put } from 'redux-saga/effects';
 
-export default function* getFollowersInfoApi(){
+export default function* getFollowersInfoApi(action){
     try {
-		const payload = yield fetch(`https://api.github.com/users/DevWichrowski/followers`, {
+		const payload = yield fetch(`https://api.github.com/users/${action.payload}/followers`, {
 			method: 'get',
 		}).then((response) => response.json());
 
