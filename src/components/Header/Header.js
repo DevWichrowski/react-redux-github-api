@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
 import { Button } from 'react-bootstrap';
-import { getPersonalInfo} from '../../store/actions/personalInfoActions';
-import { getFollowersInfo} from '../../store/actions/followersInfoAction';
+import { getPersonalInfo } from '../../store/actions/personalInfoActions';
+import { getFollowersInfo } from '../../store/actions/followersInfoAction';
 import { getRepos } from '../../store/actions/reposInfoAction';
 import { saveUsername } from '../../store/actions/personalInfoActions';
 
@@ -18,14 +18,14 @@ class Header extends Component {
 	}
 
 	// componentDidMount() {
-		// this.props.dispatch(getPersonalInfo('DevWichrowski'));
-		// this.props.dispatch(getRepos('DevWichrowski'));
-		// this.props.dispatch(getFollowersInfo('DevWichrowski'));
+	// this.props.dispatch(getPersonalInfo('DevWichrowski'));
+	// this.props.dispatch(getRepos('DevWichrowski'));
+	// this.props.dispatch(getFollowersInfo('DevWichrowski'));
 	// }
 
 	saveUserInState = (e) => {
 		this.setState({ username: e.target.value });
-		console.log(this.state.username)
+		console.log(this.state.username);
 	};
 
 	render() {
@@ -39,7 +39,7 @@ class Header extends Component {
 					bsStyle="primary"
 					onClick={() => {
 						this.props.saveUserToStore(this.state.username);
-						this.searchForUser();
+						this.props.searchForUser(this.state.username);
 					}}
 				>
 					Search
@@ -50,11 +50,12 @@ class Header extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-	saveUserToStore: (payload) => dispatch(saveUsername(payload))
+	saveUserToStore: (payload) => dispatch(saveUsername(payload)),
+	searchForUser: (payload) => dispatch(getPersonalInfo(payload))
 });
 
 const mapStateToProps = (state) => ({
-	personalInfo: state.personalInfo,
+	personalInfo: state.personalInfo
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

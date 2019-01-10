@@ -15,9 +15,9 @@ export const fetchFailure = (payload) => ({
 	payload
 });
 
-export const getPersonalInfo = (paylaod) => ({
+export const getPersonalInfo = (payload) => ({
 	type: 'GET_PERSONAL_INFO',
-	paylaod
+	payload
 })
 
 export const saveUsername = (payload) => ({
