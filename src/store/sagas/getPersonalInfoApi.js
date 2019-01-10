@@ -2,7 +2,6 @@ import { put } from 'redux-saga/effects';
 
 // Funkcja, tak zwany generator. W ponizszym przykladzie uderzam w usera, poczym wywolujemy akcje o typie [personalInfoAction] - SUCCESS_POSTS z payloadem, ktorzy otrzymalismy spowrotem z api.
 export default function* getPersonalInfoApi(action) {
-	console.log(action.payload);
 	try {
 		const payload = yield fetch(`http://api.github.com/users/${action.payload}`, {
 			method: 'get',

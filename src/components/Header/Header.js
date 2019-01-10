@@ -17,15 +17,8 @@ class Header extends Component {
 		};
 	}
 
-	// componentDidMount() {
-	// this.props.dispatch(getPersonalInfo('DevWichrowski'));
-	// this.props.dispatch(getRepos('DevWichrowski'));
-	// this.props.dispatch(getFollowersInfo('DevWichrowski'));
-	// }
-
 	saveUserInState = (e) => {
 		this.setState({ username: e.target.value });
-		console.log(this.state.username);
 	};
 
 	render() {
@@ -40,6 +33,7 @@ class Header extends Component {
 					onClick={() => {
 						this.props.saveUserToStore(this.state.username);
 						this.props.searchForUser(this.state.username);
+						this.props.getReposInfo(this.state.username);
 					}}
 				>
 					Search
@@ -51,7 +45,8 @@ class Header extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
 	saveUserToStore: (payload) => dispatch(saveUsername(payload)),
-	searchForUser: (payload) => dispatch(getPersonalInfo(payload))
+	searchForUser: (payload) => dispatch(getPersonalInfo(payload)),
+	getReposInfo: (payload) => dispatch(getRepos(payload))
 });
 
 const mapStateToProps = (state) => ({
