@@ -1,6 +1,7 @@
 import * as PersonalInfoAction from '../actions/personalInfoActions';
 
 const initialState = {
+	username: null,
 	personalInfoArr: [],
 	loading: false,
 	error: null
@@ -17,6 +18,9 @@ export function personalInfoReducer(state = initialState, action) {
 		}
 		case PersonalInfoAction.FETCH_FAILURE: {
 			return {...state, loading: false, error: action.payload.error, personalInfoArr: []}
+		}
+		case PersonalInfoAction.SAVE_USERNAME : {
+			return {...state, loading: false, error: action.payload.error, username: action.payload}
 		}
 
 		default: {

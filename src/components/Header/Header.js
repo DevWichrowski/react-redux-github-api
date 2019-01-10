@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import { getPersonalInfo} from '../../store/actions/personalInfoActions';
 import { getFollowersInfo} from '../../store/actions/followersInfoAction';
 import { getRepos } from '../../store/actions/reposInfoAction';
+import { saveUsername } from '../../store/actions/personalInfoActions';
 
 class Header extends Component {
 	constructor(props) {
@@ -16,15 +17,15 @@ class Header extends Component {
 		};
 	}
 
-	componentDidMount() {
-		this.props.dispatch(getPersonalInfo('DevWichrowski'));
-		this.props.dispatch(getRepos('devwichrowski'));
-		this.props.dispatch(getFollowersInfo('DevWichrowski'));
-	}
+	// componentDidMount() {
+		// this.props.dispatch(getPersonalInfo('DevWichrowski'));
+		// this.props.dispatch(getRepos('DevWichrowski'));
+		// this.props.dispatch(getFollowersInfo('DevWichrowski'));
+	// }
 
 	saveUserInState = (e) => {
 		this.setState({ username: e.target.value });
-		// console.log(this.state.username);
+		console.log(this.state.username)
 	};
 
 	render() {
@@ -37,6 +38,7 @@ class Header extends Component {
 				<Button
 					bsStyle="primary"
 					onClick={() => {
+						this.props.saveUserToStore(this.state.username);
 						this.searchForUser();
 					}}
 				>
@@ -47,12 +49,12 @@ class Header extends Component {
 	}
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-// 	saveUserToStore: (payload) => dispatch(saveUsername(payload))
-// });
+const mapDispatchToProps = (dispatch) => ({
+	saveUserToStore: (payload) => dispatch(saveUsername(payload))
+});
 
 const mapStateToProps = (state) => ({
 	personalInfo: state.personalInfo,
 });
 
-export default connect(mapStateToProps, null)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
