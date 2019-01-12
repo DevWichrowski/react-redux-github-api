@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 class Followers extends Component {
 	render() {
-		const followersApi = this.props.followersInfo.followersInfoArr;
+		const followersApi = this.props.followersInfo;
 		return (
 			<div className="Followers">
 				<h1>Followers</h1>
@@ -23,6 +23,6 @@ class Followers extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	followersInfo: state.followersInfo
+	followersInfo: state.followersInfo.followersInfoArr
 });
 export default connect(mapStateToProps, null)(Followers);
