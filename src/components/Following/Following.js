@@ -8,13 +8,13 @@ function Following(props) {
 	return (
 		<div className="Followers">
 			<h1>Following</h1>
+			<div className="followers-flex">
 			{followingApi.map((following, index) => {
 				return (
-					<div key={index}>
 						<User login={following.login} avatar={following.avatar_url} profile={following.html_url} />
-					</div>
 				);
 			})}
+			</div>
 		</div>
 	);
 }

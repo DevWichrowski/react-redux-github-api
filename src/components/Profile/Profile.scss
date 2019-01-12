@@ -22,9 +22,10 @@
             display: flex;
             flex-direction: row;
 
-            p{
+            p {
                 margin-right: 20px;
-                .stats-icons{
+
+                .stats-icons {
                     margin-right: 5px;
                 }
             }
@@ -52,16 +53,14 @@
         margin-left: 10px;
     }
 
-
-
     #popover-basic {
         color: black;
-        height: 140px;
+        height: 160px;
     }
 
     .repo-gits {
         @extend .follows;
-        border-left: 0!important;
-        margin-left: 0!important;
+        border-left: 0 !important;
+        margin-left: 0 !important;
     }
 }

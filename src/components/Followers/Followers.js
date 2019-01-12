@@ -9,14 +9,14 @@ class Followers extends Component {
 		return (
 			<div className="Followers">
 				<h1>Followers</h1>
+				<div className="followers-flex">
 				{followersApi.map((followers, index) => {
 					
 					return (
-						<div key={index}>
 							<User login={followers.login} avatar={followers.avatar_url} profile={followers.html_url} />
-						</div>
 					);
 				})}
+				</div>
 			</div>
 		);
 	}
