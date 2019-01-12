@@ -4,6 +4,7 @@ import Profile from '../Profile/Profile';
 import ReposContainer from '../ReposContainer/ReposContainer';
 import Followers from '../Followers/Followers';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Following from '../Following/Following';
 
 class Main extends Component {
 	render() {
@@ -14,6 +15,7 @@ class Main extends Component {
 					<Profile />
 					<Route exact path="/" component={ReposContainer} />
 					<Route path="/followers" component={Followers} />
+					<Route path="/following" component={Following} />
 				</div>
 			</BrowserRouter>
 		);

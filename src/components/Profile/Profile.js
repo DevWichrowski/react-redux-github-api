@@ -100,10 +100,12 @@ class Profile extends Component {
 									{personalData.followers}
 								</p>
 							</NavLink>
+							<NavLink to="/following">
 							<p>
 								<Glyphicon className="stats-icons" glyph="chevron-up" />Following{' '}
 								{personalData.following}
 							</p>
+							</NavLink>
 							<NavLink to="/">
 								<p>
 									<Glyphicon className="stats-icons" glyph="th-large" />Repos{' '}
