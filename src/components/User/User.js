@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
-import { Glyphicon } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import './User.scss';
 

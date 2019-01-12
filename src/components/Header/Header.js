@@ -4,7 +4,6 @@ import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
 import { Button } from 'react-bootstrap';
 import { getPersonalInfo } from '../../store/actions/personalInfoActions';
-import { getFollowersInfo } from '../../store/actions/followersInfoAction';
 import { getRepos } from '../../store/actions/reposInfoAction';
 import { saveUsername } from '../../store/actions/personalInfoActions';
 
@@ -25,7 +24,7 @@ class Header extends Component {
 		return (
 			<div className="Header">
 				<a href="https://github.com/">
-					<img className="logo" src={GithubLogo} />
+					<img className="logo" src={GithubLogo} alt=""/>
 				</a>
 				<input className="search-input" onChange={this.saveUserInState} />
 				<Button

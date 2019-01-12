@@ -19,9 +19,9 @@ export const getRepos = (payload) => ({
 })
 
 // Handle HTTP errors since fetch won't.
-const handleErrors = (response) => {
-	if (!response.ok) {
-		throw Error(response.statusText);
-	}
-	return response;
-};
+// const handleErrors = (response) => {
+// 	if (!response.ok) {
+// 		throw Error(response.statusText);
+// 	}
+// 	return response;
+// };

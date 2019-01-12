@@ -15,9 +15,9 @@ export function reposInfoReducer(state = initialState, action) {
 		case ReposInfoAction.FETCH_SUCCESS:  {
 			return {...state, loading: false, reposInfoArr: action.payload}
 		}
-		case ReposInfoAction.FETCH_FAILURE: {
-			return {...state, loading: false, error: action.payload.error, reposInfoArr: []}
-		}
+		// case ReposInfoAction.FETCH_FAILURE: {
+		// 	return {...state, loading: false, error: action.payload.error, reposInfoArr: []}
+		// }
 
 		default: {
 			return state;
