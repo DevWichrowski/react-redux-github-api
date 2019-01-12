@@ -113,9 +113,11 @@ class Profile extends Component {
 									{personalData.public_repos}
 								</p>
 							</NavLink>
+							<NavLink to="/gits">
 							<p>
 								<Glyphicon className="stats-icons" glyph="list-alt" />Gits {personalData.public_gists}
 							</p>
+							</NavLink>
 							<p>
 								<Glyphicon className="stats-icons" glyph="star" />Starred repos{' '}
 								{personalData.public_gists}

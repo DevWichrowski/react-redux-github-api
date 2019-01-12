@@ -5,6 +5,7 @@ import ReposContainer from '../ReposContainer/ReposContainer';
 import Followers from '../Followers/Followers';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Following from '../Following/Following';
+import Gits from '../Gits/Gits';
 
 class Main extends Component {
 	render() {
@@ -16,6 +17,7 @@ class Main extends Component {
 					<Route exact path="/" component={ReposContainer} />
 					<Route path="/followers" component={Followers} />
 					<Route path="/following" component={Following} />
+					<Route path="/gits" component={Gits} />
 				</div>
 			</BrowserRouter>
 		);
