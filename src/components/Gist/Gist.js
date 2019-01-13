@@ -5,7 +5,6 @@ const Gist = (props) => {
     return (
         <div className='Gist'>
             <h4>{props.name}</h4>
-
         </div>
     );
 }
