@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import './GistsContainer.scss';
-import Gists from "../Gists/Gists";
+import Gist from "../Gist/Gist";
 
 function GistsContainer(props) {
     const gistsData = props.gistsInfo;
@@ -18,7 +18,7 @@ function GistsContainer(props) {
             {gistsData.map((gists, index) => {
                 return (
                     <div key={index}>
-                    <Gists name={getFilename(gists)}/>
+                    <Gist name={getFilename(gists)}/>
                     </div>
                 )
             })}
