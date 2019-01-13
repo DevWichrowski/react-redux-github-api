@@ -1,11 +1,10 @@
 import React from 'react';
 import './Gists.scss';
-import {connect} from "react-redux";
 
 const Gists = (props) => {
     return (
         <div>
-            <h1>Gits</h1>
+            <h1>{props.name}</h1>
 
         </div>
     );

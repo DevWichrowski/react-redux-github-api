@@ -5,13 +5,22 @@ import Gists from "../Gists/Gists";
 
 function GistsContainer(props) {
     const gistsData = props.gistsInfo;
+
+    const getFilename = (arr) =>{
+        for (const x in arr.files){
+            return x;
+        }
+    }
+
     return (
         <div>
             <h1>GistsContainer</h1>
             {gistsData.map((gists, index) => {
                 return (
-                    <Gists/>
-                );
+                    <div key={index}>
+                    <Gists name={getFilename(gists)}/>
+                    </div>
+                )
             })}
         </div>
     );
