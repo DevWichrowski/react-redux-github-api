@@ -1,7 +1,7 @@
 import React from 'react';
-import './Gits.scss';
+import './Gists.scss';
 
-export default function Gits() {
+export default function Gists() {
 	return (
 		<div>
 			<h1>Gits</h1>
