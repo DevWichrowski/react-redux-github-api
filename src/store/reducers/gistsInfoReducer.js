@@ -15,7 +15,7 @@ export function gistsInfoReducer(state = initialState, action) {
         case GistsInfoAction.FETCH_SUCCESS: {
             return {...state, loading: false, gistsInfoArr: action.payload}
         }
-        
+
         default: {
             return state;
         }
