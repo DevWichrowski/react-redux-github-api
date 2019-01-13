@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import { getPersonalInfo } from '../../store/actions/personalInfoActions';
 import { getRepos } from '../../store/actions/reposInfoAction';
 import { saveUsername } from '../../store/actions/personalInfoActions';
+import {getGistsInfo} from "../../store/actions/gistsInfoAction";
 
 class Header extends Component {
 	constructor(props) {
@@ -33,6 +34,7 @@ class Header extends Component {
 						this.props.saveUserToStore('devwichrowski');
 						this.props.searchForUser('devwichrowski');
 						this.props.getReposInfo('devwichrowski');
+						this.props.getGistsInfo('devwichrowski');
 					}}
 				>
 					Search
@@ -45,7 +47,8 @@ class Header extends Component {
 const mapDispatchToProps = (dispatch) => ({
 	saveUserToStore: (payload) => dispatch(saveUsername(payload)),
 	searchForUser: (payload) => dispatch(getPersonalInfo(payload)),
-	getReposInfo: (payload) => dispatch(getRepos(payload))
+	getReposInfo: (payload) => dispatch(getRepos(payload)),
+	getGistsInfo: (payload) => dispatch(getGistsInfo(payload))
 });
 
 const mapStateToProps = (state) => ({
