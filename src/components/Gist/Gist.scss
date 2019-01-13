@@ -1,6 +1,29 @@
 @import '../../styles/colors';
 
-.Gist{
-background-color: $background-color;
+.Gist {
+  background-color: $background-color;
   color: white;
+  width: 80%;
+  height: 25%;
+  border: 1px $background-color solid;
+  border-radius: 3px;
+  margin: 20px auto;
+
+
+  a {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  -webkit-box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
 }
