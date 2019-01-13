@@ -95,6 +95,12 @@ class Profile extends Component {
 							</p>
 						</div>
 						<div className="follows">
+							<NavLink to="/">
+								<p>
+									<Glyphicon className="stats-icons" glyph="th-large" />Repos{' '}
+									{personalData.public_repos}
+								</p>
+							</NavLink>
 							<NavLink to="/followers">
 								<p onClick={() => this.props.getFollowers(this.props.personalInfo.username)}>
 									<Glyphicon className="stats-icons" glyph="chevron-down" />Followers{' '}
@@ -107,21 +113,11 @@ class Profile extends Component {
 								{personalData.following}
 							</p>
 							</NavLink>
-							<NavLink to="/">
-								<p>
-									<Glyphicon className="stats-icons" glyph="th-large" />Repos{' '}
-									{personalData.public_repos}
-								</p>
-							</NavLink>
 							<NavLink to="/gits">
 							<p>
 								<Glyphicon className="stats-icons" glyph="list-alt" />Gits {personalData.public_gists}
 							</p>
 							</NavLink>
-							<p>
-								<Glyphicon className="stats-icons" glyph="star" />Starred repos{' '}
-								{personalData.public_gists}
-							</p>
 						</div>
 					</div>
 				) : (
