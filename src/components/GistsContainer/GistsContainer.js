@@ -19,7 +19,7 @@ function GistsContainer(props) {
                     {gistsData.map((gists, index) => {
                         return (
                             <div key={index}>
-                                <Gist name={getFilename(gists)} htmlUrl={gists.html_url} description={gists.description}/>
+                                <Gist name={getFilename(gists)} htmlUrl={gists.html_url} description={gists.description} createdAt={gists.created_at}/>
                             </div>
                         )
                     })}
