@@ -1,5 +1,7 @@
+@import '../../styles/colors';
+
 .User {
-    background-color: #24292eef;
+    background-color: $background-color;
     color: white;
     margin: 20px 20px;
     width: 25%;

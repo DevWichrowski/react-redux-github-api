@@ -1,7 +1,9 @@
+@import '../../styles/colors';
+
 .Header {
     width: 100%;
     height: 75px;
-    background-color: #24292e;
+    background-color: $header-color;
     color: white;
     padding-top: 14px;
     padding-bottom: 12px;

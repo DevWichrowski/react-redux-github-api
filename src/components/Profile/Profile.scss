@@ -1,8 +1,10 @@
+@import '../../styles/colors';
+
 .Profile {
     width: 100%;
     min-height: 80px;
     color: white;
-    background-color: #24292eef;
+    background-color: $background-color;
 
     a {
         color: white;
