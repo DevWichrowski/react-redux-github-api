@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Image} from 'react-bootstrap';
+import {Badge, Image} from 'react-bootstrap';
 import {Glyphicon} from 'react-bootstrap';
 import {Popover} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
@@ -99,25 +99,26 @@ class Profile extends Component {
                             <NavLink to="/">
                                 <p>
                                     <Glyphicon className="stats-icons" glyph="th-large"/>Repos{' '}
-                                    {personalData.public_repos}
+                                    <Badge>{personalData.public_repos}</Badge>
                                 </p>
                             </NavLink>
                             <NavLink to="/followers">
                                 <p onClick={() => this.props.getFollowers(this.props.personalInfo.username)}>
                                     <Glyphicon className="stats-icons" glyph="chevron-down"/>Followers{' '}
-                                    {personalData.followers}
+                                    <Badge>{personalData.followers}</Badge>
                                 </p>
                             </NavLink>
                             <NavLink to="/following">
                                 <p onClick={() => this.props.getFollowing(this.props.personalInfo.username)}>
                                     <Glyphicon className="stats-icons" glyph="chevron-up"/>Following{' '}
-                                    {personalData.following}
+                                    <Badge>{personalData.following}</Badge>
                                 </p>
                             </NavLink>
                             <NavLink to="/gits">
                                 <p onClick={() => this.props.getGistsInfo(this.props.personalInfo.username)}>
                                     <Glyphicon className="stats-icons"
-                                               glyph="list-alt"/>Gits {personalData.public_gists}
+                                               glyph="list-alt"/>Gits
+                                    <Badge>{personalData.public_gists}</Badge>
                                 </p>
                             </NavLink>
                         </div>
