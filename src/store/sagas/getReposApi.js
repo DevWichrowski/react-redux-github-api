@@ -18,9 +18,11 @@ export function* getReposApi(action) {
 }
 
 export function* getDetailedReposApi(action) {
+	console.log(action.payload.username);
+	console.log(action.payload.reponame);
 	try {
 		const payload = yield fetch(
-			`https://api.github.com/repos/${action.payload}/react-redux-github-api${authToken}`,
+			`https://api.github.com/repos/${action.payload.username}/${action.payload.reponame}${authToken}`,
 			{
 				method: 'get'
 			}
