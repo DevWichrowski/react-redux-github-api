@@ -1,7 +1,9 @@
 import React from 'react';
 import './RepoBox.scss';
 import moment from 'moment';
-import {NavLink} from "react-router-dom";
+import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { saveRepoName } from '../../store/actions/reposInfoAction';
 
 const RepoBox = (props) => {
 	const lastUpdate = moment(props.lastUpdate).fromNow();
@@ -9,8 +11,8 @@ const RepoBox = (props) => {
 	return (
 		<div className="RepoBox">
 			<NavLink to="/repo-detailed">
-			<h3>{props.name}</h3>
-		</NavLink>
+				<h3 onClick={() => props.saveRepoName(props.name)}>{props.name}</h3>
+			</NavLink>
 			<div className="dived-badge">{props.devLang}</div>
 			<p className="last-update">Last update: {lastUpdate}</p>
 			{props.description !== null ? <p>{props.description}</p> : <p> no description :(</p>}
@@ -19,4 +21,12 @@ const RepoBox = (props) => {
 	);
 };
 
-export default RepoBox;
+const mapDispatchToProps = (dispatch) => ({
+	saveRepoName: (payload) => dispatch(saveRepoName(payload))
+});
+
+const mapStateToProps = (state) => ({
+	personalInfo: state.personalInfo
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RepoBox);
