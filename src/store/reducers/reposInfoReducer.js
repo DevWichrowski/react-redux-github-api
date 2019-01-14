@@ -1,6 +1,7 @@
 import * as ReposInfoAction from '../actions/reposInfoAction';
 
 const initialState = {
+	repoName: null,
 	reposInfoArr: [],
 	repoDetailedArr: [],
 	loading: false,
@@ -17,6 +18,9 @@ export function reposInfoReducer(state = initialState, action) {
 		}
 		case ReposInfoAction.FETCH_DETAILED_REPOS: {
 			return { ...state, loading: false, repoDetailedArr: action.payload };
+		}
+		case ReposInfoAction.SAVE_REPO_NAME: {
+			return { ...state, loading: false, repoName: action.payload };
 		}
 		// case ReposInfoAction.FETCH_FAILURE: {
 		// 	return {...state, loading: false, error: action.payload.error, reposInfoArr: []}
