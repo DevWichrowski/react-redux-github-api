@@ -13,7 +13,7 @@ export function reposInfoReducer(state = initialState, action) {
 		case ReposInfoAction.FETCH_REQUEST: {
 			return {...state, loading: true, error: null}
 		}
-		case ReposInfoAction.FETCH_SUCCESS:  {
+		case ReposInfoAction.FETCH_REPOS:  {
 			return {...state, loading: false, reposInfoArr: action.payload}
 		}
 		// case ReposInfoAction.FETCH_FAILURE: {
