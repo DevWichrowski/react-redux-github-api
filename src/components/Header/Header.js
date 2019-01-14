@@ -4,7 +4,7 @@ import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
 import { Button } from 'react-bootstrap';
 import { getPersonalInfo } from '../../store/actions/personalInfoActions';
-import { getRepos } from '../../store/actions/reposInfoAction';
+import { getRepos, getDetailedRepo } from '../../store/actions/reposInfoAction';
 import { saveUsername } from '../../store/actions/personalInfoActions';
 
 class Header extends Component {
@@ -33,6 +33,7 @@ class Header extends Component {
 						this.props.saveUserToStore('devwichrowski');
 						this.props.searchForUser('devwichrowski');
 						this.props.getReposInfo('devwichrowski');
+						this.props.getDetailedRepo('devwichrowski');
 					}}
 				>
 					Search
@@ -46,6 +47,7 @@ const mapDispatchToProps = (dispatch) => ({
 	saveUserToStore: (payload) => dispatch(saveUsername(payload)),
 	searchForUser: (payload) => dispatch(getPersonalInfo(payload)),
 	getReposInfo: (payload) => dispatch(getRepos(payload)),
+	getDetailedRepo: (payload) => dispatch(getDetailedRepo(payload))
 });
 
 const mapStateToProps = (state) => ({

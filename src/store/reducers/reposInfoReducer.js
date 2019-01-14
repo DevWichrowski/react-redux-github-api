@@ -9,12 +9,14 @@ const initialState = {
 
 export function reposInfoReducer(state = initialState, action) {
 	switch (action.type) {
-
 		case ReposInfoAction.FETCH_REQUEST: {
-			return {...state, loading: true, error: null}
+			return { ...state, loading: true, error: null };
 		}
-		case ReposInfoAction.FETCH_REPOS:  {
-			return {...state, loading: false, reposInfoArr: action.payload}
+		case ReposInfoAction.FETCH_REPOS: {
+			return { ...state, loading: false, reposInfoArr: action.payload };
+		}
+		case ReposInfoAction.FETCH_DETAILED_REPOS: {
+			return { ...state, loading: false, repoDetailedArr: action.payload };
 		}
 		// case ReposInfoAction.FETCH_FAILURE: {
 		// 	return {...state, loading: false, error: action.payload.error, reposInfoArr: []}
