@@ -6,7 +6,6 @@ import { Button } from 'react-bootstrap';
 import { getPersonalInfo } from '../../store/actions/personalInfoActions';
 import { getRepos } from '../../store/actions/reposInfoAction';
 import { saveUsername } from '../../store/actions/personalInfoActions';
-import {getGistsInfo} from "../../store/actions/gistsInfoAction";
 
 class Header extends Component {
 	constructor(props) {
