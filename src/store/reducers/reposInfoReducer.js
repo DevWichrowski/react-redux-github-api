@@ -2,6 +2,7 @@ import * as ReposInfoAction from '../actions/reposInfoAction';
 
 const initialState = {
 	reposInfoArr: [],
+	repoDetailedArr: [],
 	loading: false,
 	error: null
 };
