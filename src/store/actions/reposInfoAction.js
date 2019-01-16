@@ -13,11 +13,3 @@ export const fetchFailure = (payload) => ({ type: FETCH_FAILURE, payload });
 export const getRepos = (payload) => ({ type: GET_REPOS, payload });
 export const getDetailedRepo = (payload) => ({ type: GET_DETAILED_REPO, payload });
 export const saveRepoName = (payload) => ({ type: SAVE_REPO_NAME, payload });
-
-// Handle HTTP errors since fetch won't.
-// const handleErrors = (response) => {
-// 	if (!response.ok) {
-// 		throw Error(response.statusText);
-// 	}
-// 	return response;
-// };

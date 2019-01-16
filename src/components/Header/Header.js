@@ -4,7 +4,7 @@ import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
 import { Button } from 'react-bootstrap';
 import { getPersonalInfo } from '../../store/actions/personalInfoActions';
-import { getRepos, getDetailedRepo } from '../../store/actions/reposInfoAction';
+import { getRepos } from '../../store/actions/reposInfoAction';
 import { saveUsername } from '../../store/actions/personalInfoActions';
 
 class Header extends Component {
