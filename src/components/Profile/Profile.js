@@ -26,6 +26,19 @@ class Profile extends Component {
         const loading = this.props.personalInfo.loading;
         const error = this.props.personalInfo.error;
         const personalData = this.props.personalInfo.personalInfoArr;
+
+        if (error) {
+            return <div>Error {error.message}</div>;
+        }
+
+        if (loading) {
+            return (
+                <div>
+                    <h2>Loading... </h2>
+                </div>
+            );
+        }
+
         const personalPopoverr = (
             <div>
                 <Popover
@@ -62,19 +75,6 @@ class Profile extends Component {
                 </Popover>
             </div>
         );
-
-        if (error) {
-            return <div>Error {error.message}</div>;
-        }
-
-        if (loading) {
-            return (
-                <div>
-                    {' '}
-                    <h2>Loading... </h2>
-                </div>
-            );
-        }
 
         return (
             <div className="Profile">
