@@ -33,7 +33,6 @@ class Header extends Component {
 						this.props.saveUserToStore('devwichrowski');
 						this.props.searchForUser('devwichrowski');
 						this.props.getReposInfo('devwichrowski');
-						this.props.getDetailedRepo({username: 'devwichrowski', reponame: this.props.reposInfo.repoName});
 					}}
 				>
 					Search
@@ -47,7 +46,6 @@ const mapDispatchToProps = (dispatch) => ({
 	saveUserToStore: (payload) => dispatch(saveUsername(payload)),
 	searchForUser: (payload) => dispatch(getPersonalInfo(payload)),
 	getReposInfo: (payload) => dispatch(getRepos(payload)),
-	getDetailedRepo: (payload) => dispatch(getDetailedRepo(payload))
 });
 
 const mapStateToProps = (state) => ({
