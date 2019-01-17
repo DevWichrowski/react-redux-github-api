@@ -3,9 +3,17 @@
 .RepoDetailedInfo{
   hr{
     height: 1px;
-    background-color: $background-color;
-    color: $background-color;
+    background-color: white;
+    color: white;
     margin: 0 auto;
     width: 40%;
+  }
+
+  .detailed-repo{
+    background-color: $background-color;
+    color: white;
+    border: 1px solid $background-color;
+    border-radius: 5px;
+    margin: 2% auto;
   }
 }
