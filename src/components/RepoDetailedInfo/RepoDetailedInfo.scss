@@ -21,11 +21,16 @@
       display: flex;
       flex-direction: row;
       padding: 20px;
-      justify-content: space-between;
-      //background-color: rgba(255,255,255, 0.2);
+      justify-content: space-around;
 
       .date {
+        background-color: rgba(255,255,255, 0.05);
+        text-align: center;
+        width: 30%;
+        display: flex;
+        flex-direction: row;
         padding: 5px 10px;
+        justify-content: space-between;
       }
     }
 
@@ -43,17 +48,23 @@
       border-bottom: 1px solid black;
     }
 
+    .info {
+      background-color: rgba(255,255,255, 0.05);
+      text-align: center;
+      width: 30%;
+      display: flex;
+      flex-direction: row;
+      padding: 5px 10px;
+      justify-content: space-between;
+    }
+
     .repo-detailed-info {
       display: flex;
       flex-direction: row;
       margin-bottom: 20px;
-
-      padding: 20px;
+      border: 1px solid rgba(255,255,255, 0.1);
+      padding: 15px;
       justify-content: space-between;
-
-      .info {
-        text-align: center;
-      }
     }
 
     .repo-desc {
@@ -61,12 +72,22 @@
       padding: 20px;
       display: flex;
       flex-direction: column;
-      margin-bottom: 30px;
 
       .desc-header {
-        font-size: 26px;
+        font-size: 22px;
         margin-bottom: 10px;
       }
+    }
+
+    a {
+      color: white;
+    }
+
+    .repo-buttons {
+      display: flex;
+      flex-direction: row;
+      padding: 20px;
+      justify-content: space-between;
     }
 
     .repo-actions {
@@ -85,7 +106,7 @@
       }
 
       .action:hover {
-        background-color: rgba(255,255,255, 0.1);
+        background-color: $blue;
         cursor: pointer;
       }
     }

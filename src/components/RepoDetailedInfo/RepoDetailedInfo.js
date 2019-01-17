@@ -4,6 +4,7 @@ import './RepoDetailedInfo.scss';
 import {Button, Glyphicon, Tooltip, OverlayTrigger} from "react-bootstrap";
 import moment from "moment";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import {NavLink} from "react-router-dom";
 
 function RepoDetailedInfo(props) {
     const createdAt = moment(props.reposInfo.created_at).fromNow();
@@ -19,15 +20,13 @@ function RepoDetailedInfo(props) {
         <div className="RepoDetailedInfo">
             {props.reposInfo.name !== undefined ? (
                 <div className="detailed-repo">
-                    <div className="dates">
-                        <div className="date">
-                            Created at: {createdAt}
-                        </div>
-                        <div className="date">
-                            Last update: {lastUpdate}
-                        </div>
+                    <div className="repo-buttons">
+                        <a href={props.reposInfo.html_url}><Button bsStyle="primary">Visit on Github</Button></a>
+                        <NavLink to="/">
+                        <Button bsStyle="primary"> Go back </Button>
+                        </NavLink>
                     </div>
-                    <div class="main-info">
+                    <div className="main-info">
                         <div className="repo-name">
                             {props.reposInfo.name}
                         </div>
@@ -40,15 +39,48 @@ function RepoDetailedInfo(props) {
                             </div>
                         </div>
                     </div>
+                    <div className="dates">
+                        <div className="date">
+                            <div>
+                                Created at:
+                            </div>
+                            <div>
+                                {createdAt}
+                            </div>
+                        </div>
+                        <div className="date">
+                            <div>
+                                Last update:
+                            </div>
+                            <div>
+                                {lastUpdate}
+                            </div>
+                        </div>
+                    </div>
                     <div className="repo-detailed-info">
                         <div className="info">
-                            Language: {props.reposInfo.language}
+                            <div className="info-header">
+                                Language:
+                            </div>
+                            <div>
+                                {props.reposInfo.language}
+                            </div>
                         </div>
                         <div className="info">
-                            Default branch: {props.reposInfo.default_branch}
+                            <div className="info-header">
+                                Default branch:
+                            </div>
+                            <div>
+                                {props.reposInfo.default_branch}
+                            </div>
                         </div>
                         <div className="info">
-                            Subscribers: {props.reposInfo.subscribers_count}
+                            <div className="info-header">
+                                Subscribers:
+                            </div>
+                            <div>
+                                {props.reposInfo.subscribers_count}
+                            </div>
                         </div>
                     </div>
                     <div className="repo-actions">
