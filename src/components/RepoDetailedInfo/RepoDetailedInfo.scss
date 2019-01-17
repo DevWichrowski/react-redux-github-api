@@ -16,5 +16,27 @@
     border: 1px solid $background-color;
     border-radius: 5px;
     margin: 2% auto;
+
+    .dates {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+
+    .repo-detailed-info {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+
+    .repo-desc {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .repo-actions {
+      display: flex;
+      flex-direction: row;
+    }
   }
 }

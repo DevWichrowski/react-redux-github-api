@@ -12,29 +12,49 @@ function RepoDetailedInfo(props) {
         <div className="RepoDetailedInfo">
             {props.reposInfo.name !== undefined ? (
                 <div className="detailed-repo">
-                    <h2>{props.reposInfo.name}</h2>
-                    <hr size="30"/>
-                    <div className="repo-dates">
-                        <p>Created at: {createdAt}</p>
-                        <p>Last update: {lastUpdate}</p>
+                    <div className="dates">
+                        <div className="date">
+                            Created at: {createdAt}
+                        </div>
+                        <div className="date">
+                            Last update: {lastUpdate}
+                        </div>
                     </div>
-                    <div className="repo-lang">
-                        <p>Language: {props.reposInfo.language}</p>
-                        <p>default branch {props.reposInfo.default_branch}</p>
-                        <p>subscribers: {props.reposInfo.subscribers_count}</p>
+                    <div className="repo-name">
+                        {props.reposInfo.name}
                     </div>
-
-                    <p>description: {props.reposInfo.description}</p>
-
-                    <div clasName="github-buttons">
-                        <p>git url {props.reposInfo.git_url}</p>
-                        <p>ssh url {props.reposInfo.ssh_url}</p>
-                        <p>clone url {props.reposInfo.clone_url}</p>
-                        <p>svn url {props.reposInfo.svn_url}</p>
+                    <div className="repo-detailed-info">
+                        <div className="info">
+                            Language: {props.reposInfo.language}
+                        </div>
+                        <div className="info">
+                            Default branch: {props.reposInfo.default_branch}
+                        </div>
+                        <div className="info">
+                            Subscribers: {props.reposInfo.subscribers_count}
+                        </div>
                     </div>
-                    <div className="detailed-navs-button">
-                        <Button bsStyle="success"><a href={props.reposInfo.html_url}>Visit on Github</a></Button>
-                        <Button bsStyle="primary"> Go back </Button>
+                    <div className="repo-desc">
+                        <div className="desc-header">
+                            Description:
+                        </div>
+                        <div className="desc-body">
+                            {props.reposInfo.description}
+                        </div>
+                    </div>
+                    <div className="repo-actions">
+                        <div className="action">
+                            Git url {props.reposInfo.git_url}
+                        </div>
+                        <div className="action">
+                            Ssh url {props.reposInfo.ssh_url}
+                        </div>
+                        <div className="action">
+                            Clone url {props.reposInfo.clone_url}
+                        </div>
+                        <div className="action">
+                            svn url {props.reposInfo.svn_url}
+                        </div>
                     </div>
                 </div>
             ) : <h1>Loading...</h1>}
