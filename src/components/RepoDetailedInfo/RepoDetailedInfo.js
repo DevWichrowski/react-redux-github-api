@@ -84,6 +84,7 @@ function RepoDetailedInfo(props) {
                         </div>
                     </div>
                     <div className="repo-actions">
+                        <h2>Downloads</h2>
                         <OverlayTrigger placement="top" overlay={tooltip}>
                             <CopyToClipboard text={props.reposInfo.git_url}>
                                 <div className="action">

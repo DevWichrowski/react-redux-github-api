@@ -17,6 +17,10 @@
     margin: 2% auto;
     overflow: hidden;
 
+    h2{
+      margin-bottom: 20px;
+    }
+
     .dates {
       display: flex;
       flex-direction: row;
@@ -61,7 +65,6 @@
     .repo-detailed-info {
       display: flex;
       flex-direction: row;
-      margin-bottom: 20px;
       border: 1px solid rgba(255,255,255, 0.1);
       padding: 15px;
       justify-content: space-between;
@@ -93,7 +96,7 @@
     .repo-actions {
       display: flex;
       flex-direction: column;
-      padding: 20px;
+      padding: 0 20px 20px 20px;
 
       .action {
         display: flex;
