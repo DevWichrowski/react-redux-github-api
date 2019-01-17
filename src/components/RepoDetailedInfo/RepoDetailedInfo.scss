@@ -1,0 +1,11 @@
+@import '../../styles/colors';
+
+.RepoDetailedInfo{
+  hr{
+    height: 1px;
+    background-color: $background-color;
+    color: $background-color;
+    margin: 0 auto;
+    width: 40%;
+  }
+}
