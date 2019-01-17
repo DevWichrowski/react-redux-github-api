@@ -23,7 +23,7 @@ function RepoDetailedInfo(props) {
                     <div className="repo-buttons">
                         <a href={props.reposInfo.html_url}><Button bsStyle="primary">Visit on Github</Button></a>
                         <NavLink to="/">
-                        <Button bsStyle="primary"> Go back </Button>
+                            <Button bsStyle="primary"> Go back </Button>
                         </NavLink>
                     </div>
                     <div className="main-info">

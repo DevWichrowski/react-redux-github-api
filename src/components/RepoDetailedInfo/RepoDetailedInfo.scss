@@ -1,7 +1,7 @@
 @import '../../styles/colors';
 
-.RepoDetailedInfo{
-  hr{
+.RepoDetailedInfo {
+  hr {
     height: 1px;
     background-color: white;
     color: white;
@@ -9,7 +9,7 @@
     width: 40%;
   }
 
-  .detailed-repo{
+  .detailed-repo {
     width: 90%;
     background-color: $background-color;
     color: white;
@@ -17,7 +17,7 @@
     margin: 2% auto;
     overflow: hidden;
 
-    h2{
+    h2 {
       margin-bottom: 20px;
     }
 
@@ -28,7 +28,7 @@
       justify-content: space-around;
 
       .date {
-        background-color: rgba(255,255,255, 0.05);
+        background-color: rgba(255, 255, 255, 0.05);
         text-align: center;
         width: 30%;
         display: flex;
@@ -39,21 +39,21 @@
     }
 
     .main-info {
-      -webkit-box-shadow: 1px 2px 26px 6px rgba(0,0,0,0.75);
-      -moz-box-shadow: 1px 2px 26px 6px rgba(0,0,0,0.75);
-      box-shadow: 1px 2px 26px 6px rgba(0,0,0,0.75);
+      -webkit-box-shadow: 1px 2px 26px 6px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px 2px 26px 6px rgba(0, 0, 0, 0.75);
+      box-shadow: 1px 2px 26px 6px rgba(0, 0, 0, 0.75);
     }
 
     .repo-name {
       font-size: 44px;
       padding-bottom: 20px;
       padding-top: 20px;
-      background-color: rgba(255,255,255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1);
       border-bottom: 1px solid black;
     }
 
     .info {
-      background-color: rgba(255,255,255, 0.05);
+      background-color: rgba(255, 255, 255, 0.05);
       text-align: center;
       width: 30%;
       display: flex;
@@ -65,13 +65,13 @@
     .repo-detailed-info {
       display: flex;
       flex-direction: row;
-      border: 1px solid rgba(255,255,255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 15px;
       justify-content: space-between;
     }
 
     .repo-desc {
-      background-color: rgba(255,255,255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1);
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -103,7 +103,7 @@
         flex-direction: row;
         justify-content: space-between;
         padding: 10px;
-        border: 1px solid rgba(255,255,255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 5px;
         margin-bottom: 10px;
       }
