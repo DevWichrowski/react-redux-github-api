@@ -3,7 +3,8 @@
 .RepoBox {
   min-width: 350px;
   max-width: 350px;
-  min-height: 200px;
+  min-height: 250px;
+  max-height: 250px;
 
   margin: 0 auto;
   margin-top: 20px;
@@ -50,6 +51,10 @@
   .last-update {
     font-size: 9px;
     margin: 10px;
+  }
+
+  .repo-button{
+    margin-bottom: 10px;
   }
 
   -webkit-box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
