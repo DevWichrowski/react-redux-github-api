@@ -13,30 +13,81 @@
     width: 90%;
     background-color: $background-color;
     color: white;
-    border: 1px solid $background-color;
     border-radius: 5px;
     margin: 2% auto;
+    overflow: hidden;
 
     .dates {
       display: flex;
       flex-direction: row;
-      margin-bottom: 20px;
+      padding: 20px;
+      justify-content: space-between;
+      //background-color: rgba(255,255,255, 0.2);
+
+      .date {
+        padding: 5px 10px;
+      }
+    }
+
+    .main-info {
+      -webkit-box-shadow: 1px 2px 26px 6px rgba(0,0,0,0.75);
+      -moz-box-shadow: 1px 2px 26px 6px rgba(0,0,0,0.75);
+      box-shadow: 1px 2px 26px 6px rgba(0,0,0,0.75);
+    }
+
+    .repo-name {
+      font-size: 44px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      background-color: rgba(255,255,255, 0.1);
+      border-bottom: 1px solid black;
     }
 
     .repo-detailed-info {
       display: flex;
       flex-direction: row;
       margin-bottom: 20px;
+
+      padding: 20px;
+      justify-content: space-between;
+
+      .info {
+        text-align: center;
+      }
     }
 
     .repo-desc {
+      background-color: rgba(255,255,255, 0.1);
+      padding: 20px;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      margin-bottom: 30px;
+
+      .desc-header {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
     }
 
     .repo-actions {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      padding: 20px;
+
+      .action {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        border: 1px solid rgba(255,255,255, 0.1);
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      .action:hover {
+        background-color: rgba(255,255,255, 0.1);
+        cursor: pointer;
+      }
     }
   }
 }
