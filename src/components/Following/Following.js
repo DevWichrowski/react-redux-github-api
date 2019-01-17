@@ -11,7 +11,7 @@ function Following(props) {
 			<div className="followers-flex">
 			{followingApi.map((following, index) => {
 				return (
-						<User login={following.login} avatar={following.avatar_url} profile={following.html_url} />
+						<User key={index} login={following.login} avatar={following.avatar_url} profile={following.html_url} />
 				);
 			})}
 			</div>
