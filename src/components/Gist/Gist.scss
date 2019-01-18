@@ -1,0 +1,49 @@
+@import '../../styles/colors';
+
+.Gist {
+  background-color: $background-color;
+  color: white;
+  width: 80%;
+  height: 25%;
+  border: 1px $background-color solid;
+  border-radius: 3px;
+  margin: 20px auto;
+
+  .pulls {
+    font-size: 24px;
+  }
+
+  .btn-link {
+    color: $background-color;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .btn-link:hover {
+    text-decoration: none;
+  }
+
+  .btn-link:visited {
+    text-decoration: none;
+  }
+
+  a {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  -webkit-box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 34px -1px rgba(0, 0, 0, 0.75);
+}

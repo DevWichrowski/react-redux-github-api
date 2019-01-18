@@ -1,0 +1,71 @@
+@import '../../styles/colors';
+
+.Profile {
+    width: 100%;
+    min-height: 80px;
+    color: white;
+    background-color: $background-color;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .personal-data {
+        height: 100%;
+        min-height: 80px;
+
+        .follows {
+            float: right;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 30px;
+            margin-left: 10px;
+            display: flex;
+            flex-direction: row;
+
+            p {
+                margin-right: 20px;
+
+                .stats-icons {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .user-image {
+            width: 30%;
+            height: 100%;
+        }
+    }
+
+    .profil-image {
+        margin-left: 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 70px;
+        width: 70px;
+        float: left;
+        cursor: pointer;
+    }
+
+    .username {
+        float: left;
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+
+    .badge{
+        margin-left: 3px;
+    }
+    #popover-basic {
+        color: black;
+        height: 160px;
+    }
+
+    .repo-gits {
+        @extend .follows;
+        border-left: 0 !important;
+        margin-left: 0 !important;
+    }
+}
