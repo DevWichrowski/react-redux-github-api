@@ -25,7 +25,13 @@ class Header extends Component {
                 <a href="https://github.com/">
                     <img className="logo" src={GithubLogo} alt=""/>
                 </a>
-                <input className="search-input" onChange={this.saveUserInState}/>
+                <input className="search-input" onChange={this.saveUserInState} onKeyPress={event => {
+                    if (event.key === 'Enter') {
+                        this.props.saveUserToStore(this.state.username);
+                        this.props.searchForUser(this.state.username);
+                    }
+                }
+                }/>
                 <Button
                     bsStyle="primary"
                     onClick={() => {
