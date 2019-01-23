@@ -10,7 +10,7 @@ function* actionWatcher() {
 	yield takeLatest('[personalInfoAction] - SUCCESS_POSTS', getReposApi);
 	yield takeLatest('[personalInfoAction] - SUCCESS_POSTS', getFollowersInfoApi);
 	yield takeLatest('[personalInfoAction] - SUCCESS_POSTS', getFollowingInfoApi);
-	yield takeLatest('GET_GISTS_INFO', getGistsInfoApi);
+	yield takeLatest('[personalInfoAction] - SUCCESS_POSTS', getGistsInfoApi);
 	yield takeLatest('GET_DETAILED_REPO', getDetailedReposApi);
 }
 

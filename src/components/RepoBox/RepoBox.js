@@ -20,7 +20,7 @@ const RepoBox = (props) => {
                 <div className="repo-button">
                     <a href={props.profile}><Button bsStyle="primary" onClick={() => {
                         props.saveRepoName(props.name);
-                        props.getDetailedRepo({username: 'devwichrowski', reponame: props.name});
+                        props.getDetailedRepo({username: props.personalInfo.username, reponame: props.name});
                     }}>Go to details</Button></a>
                 </div>
             </NavLink>

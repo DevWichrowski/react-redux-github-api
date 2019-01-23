@@ -1,56 +1,53 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import './Header.scss';
 import GithubLogo from '../../assets/github-white.png';
-import { Button } from 'react-bootstrap';
-import { getPersonalInfo } from '../../store/actions/personalInfoActions';
-import { getRepos } from '../../store/actions/reposInfoAction';
-import { saveUsername } from '../../store/actions/personalInfoActions';
+import {Button} from 'react-bootstrap';
+import {getPersonalInfo} from '../../store/actions/personalInfoActions';
+import {saveUsername} from '../../store/actions/personalInfoActions';
 
 class Header extends Component {
-	constructor(props) {
-		super(props);
+    constructor(props) {
+        super(props);
 
-		this.state = {
-			username: ''
-		};
-	}
+        this.state = {
+            username: ''
+        };
+    }
 
-	saveUserInState = (e) => {
-		this.setState({ username: e.target.value });
-	};
+    saveUserInState = (e) => {
+        this.setState({username: e.target.value});
+    };
 
-	render() {
-		return (
-			<div className="Header">
-				<a href="https://github.com/">
-					<img className="logo" src={GithubLogo} alt=""/>
-				</a>
-				<input className="search-input" onChange={this.saveUserInState} />
-				<Button
-					bsStyle="primary"
-					onClick={() => {
-						this.props.saveUserToStore(this.state.username);
-						this.props.searchForUser(this.state.username);
-						// this.props.getReposInfo(this.state.username);
-					}}
-				>
-					Search
-				</Button>
-			</div>
-		);
-	}
+    render() {
+        return (
+            <div className="Header">
+                <a href="https://github.com/">
+                    <img className="logo" src={GithubLogo} alt=""/>
+                </a>
+                <input className="search-input" onChange={this.saveUserInState}/>
+                <Button
+                    bsStyle="primary"
+                    onClick={() => {
+                        this.props.saveUserToStore(this.state.username);
+                        this.props.searchForUser(this.state.username);
+                    }}
+                >
+                    Search
+                </Button>
+            </div>
+        );
+    }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-	saveUserToStore: (payload) => dispatch(saveUsername(payload)),
-	searchForUser: (payload) => dispatch(getPersonalInfo(payload)),
-	getReposInfo: (payload) => dispatch(getRepos(payload)),
+    saveUserToStore: (payload) => dispatch(saveUsername(payload)),
+    searchForUser: (payload) => dispatch(getPersonalInfo(payload)),
 });
 
 const mapStateToProps = (state) => ({
-	personalInfo: state.personalInfo,
-	reposInfo: state.reposInfo
+    personalInfo: state.personalInfo,
+    reposInfo: state.reposInfo
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

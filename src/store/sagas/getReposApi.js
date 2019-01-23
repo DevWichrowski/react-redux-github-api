@@ -18,7 +18,7 @@ export function* getReposApi(action) {
 }
 
 export function* getDetailedReposApi(action) {
-	console.log(action.payload.username);
+	console.log(action.payload.login);
 	console.log(action.payload.reponame);
 	try {
 		const payload = yield fetch(
