@@ -3,7 +3,7 @@ import { authToken } from '../../authToken';
 
 export function* getFollowersInfoApi(action) {
 	try {
-		const payload = yield fetch(`https://api.github.com/users/${action.payload}/followers${authToken}`, {
+		const payload = yield fetch(`https://api.github.com/users/${action.payload.login}/followers${authToken}`, {
 			method: 'get'
 		}).then((response) => response.json());
 
@@ -15,7 +15,7 @@ export function* getFollowersInfoApi(action) {
 
 export function* getFollowingInfoApi(action) {
 	try {
-		const payload = yield fetch(`https://api.github.com/users/${action.payload}/following${authToken}`, {
+		const payload = yield fetch(`https://api.github.com/users/${action.payload.login}/following${authToken}`, {
 			method: 'get'
 		}).then((response) => response.json());
 

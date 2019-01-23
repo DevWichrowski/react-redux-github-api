@@ -32,7 +32,7 @@ class Header extends Component {
 					onClick={() => {
 						this.props.saveUserToStore(this.state.username);
 						this.props.searchForUser(this.state.username);
-						this.props.getReposInfo(this.state.username);
+						// this.props.getReposInfo(this.state.username);
 					}}
 				>
 					Search

@@ -103,19 +103,19 @@ class Profile extends Component {
                                 </p>
                             </NavLink>
                             <NavLink to="/followers">
-                                <p onClick={() => this.props.getFollowers(this.props.personalInfo.username)}>
+                                <p>
                                     <Glyphicon className="stats-icons" glyph="chevron-down"/>Followers{' '}
                                     <Badge>{personalData.followers}</Badge>
                                 </p>
                             </NavLink>
                             <NavLink to="/following">
-                                <p onClick={() => this.props.getFollowing(this.props.personalInfo.username)}>
+                                <p>
                                     <Glyphicon className="stats-icons" glyph="chevron-up"/>Following{' '}
                                     <Badge>{personalData.following}</Badge>
                                 </p>
                             </NavLink>
                             <NavLink to="/gits">
-                                <p onClick={() => this.props.getGistsInfo(this.props.personalInfo.username)}>
+                                <p>
                                     <Glyphicon className="stats-icons"
                                                glyph="list-alt"/>Gits
                                     <Badge>{personalData.public_gists}</Badge>
