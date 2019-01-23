@@ -4,10 +4,7 @@ import {Badge, Image} from 'react-bootstrap';
 import {Glyphicon} from 'react-bootstrap';
 import {Popover} from 'react-bootstrap';
 import {NavLink} from 'react-router-dom';
-import {getFollowersInfo} from '../../store/actions/followersInfoAction';
-import {getFollowingInfo} from '../../store/actions/followersInfoAction';
 import './Profile.scss';
-import {getGistsInfo} from "../../store/actions/gistsInfoAction";
 
 class Profile extends Component {
     constructor(props) {
@@ -34,7 +31,7 @@ class Profile extends Component {
         if (loading) {
             return (
                 <div>
-                    <h2>Loading... </h2>
+                    <h3>Loading... </h3>
                 </div>
             );
         }
@@ -124,23 +121,15 @@ class Profile extends Component {
                         </div>
                     </div>
                 ) : (
-                    <div>
-                        <h2>Search for user</h2>
-                    </div>
+                    <p>Search for user</p>
                 )}
             </div>
         );
     }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    getFollowers: (payload) => dispatch(getFollowersInfo(payload)),
-    getFollowing: (payload) => dispatch(getFollowingInfo(payload)),
-    getGistsInfo: (payload) => dispatch(getGistsInfo(payload))
-});
-
 const mapStateToProps = (state) => ({
     personalInfo: state.personalInfo
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, null)(Profile);
