@@ -30,9 +30,9 @@ class Header extends Component {
 				<Button
 					bsStyle="primary"
 					onClick={() => {
-						this.props.saveUserToStore('devwichrowski');
-						this.props.searchForUser('devwichrowski');
-						this.props.getReposInfo('devwichrowski');
+						this.props.saveUserToStore(this.state.username);
+						this.props.searchForUser(this.state.username);
+						this.props.getReposInfo(this.state.username);
 					}}
 				>
 					Search
