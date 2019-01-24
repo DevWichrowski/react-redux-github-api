@@ -24,18 +24,6 @@ class Profile extends Component {
         const error = this.props.personalInfo.error;
         const personalData = this.props.personalInfo.personalInfoArr;
 
-        if (error) {
-            return <div>Error {error.message}</div>;
-        }
-
-        if (loading) {
-            return (
-                <div>
-                    <h3>Loading... </h3>
-                </div>
-            );
-        }
-
         const personalPopoverr = (
             <div>
                 <Popover
@@ -72,6 +60,22 @@ class Profile extends Component {
                 </Popover>
             </div>
         );
+
+        if (error) {
+            return <div>Error {error.message}</div>;
+        }
+
+        if (loading) {
+            return (
+                <div>
+                    <h3>Loading... </h3>
+                </div>
+            );
+        }
+
+        if (this.props.personalInfo.personalInfoArr.message) {
+            return (<h3>No user <strong>{this.props.personalInfo.username}</strong> found</h3>);
+        }
 
         return (
             <div className="Profile">
@@ -121,7 +125,7 @@ class Profile extends Component {
                         </div>
                     </div>
                 ) : (
-                    <p>Search for user</p>
+                    null
                 )}
             </div>
         );
