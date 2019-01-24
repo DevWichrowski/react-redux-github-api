@@ -73,8 +73,16 @@ class Profile extends Component {
             );
         }
 
+        if(this.props.personalInfo.username === null){
+            return(
+            <h3>Search for user</h3>
+            );
+        }
+
         if (this.props.personalInfo.personalInfoArr.message) {
-            return (<h3>No user <strong>{this.props.personalInfo.username}</strong> found</h3>);
+            return (<h3>Upss.. where are you <strong>{this.props.personalInfo.username}</strong>?</h3>);
+        } else if (this.props.personalInfo.personalInfoArr.length === 0) {
+            return null;
         }
 
         return (
