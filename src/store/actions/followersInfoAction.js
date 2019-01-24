@@ -20,11 +20,3 @@ export const getFollowingInfo = (payload) => ({
 	type: 'GET_FOLLOWING_INFO',
 	payload
 });
-
-// Handle HTTP errors since fetch won't.
-// const handleErrors = (response) => {
-// 	if (!response.ok) {
-// 		throw Error(response.statusText);
-// 	}
-// 	return response;
-// };

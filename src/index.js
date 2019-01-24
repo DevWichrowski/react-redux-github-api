@@ -10,6 +10,7 @@ import Provider from 'react-redux/es/components/Provider';
 import { rootReducer } from './store/reducers/rootReducer';
 import createSagaMiddleware from 'redux-saga'
 import mySaga from './store/sagas/index'
+
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
 
@@ -21,7 +22,4 @@ ReactDOM.render(
 </Provider>
 , document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();

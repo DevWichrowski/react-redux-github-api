@@ -22,9 +22,6 @@ export function reposInfoReducer(state = initialState, action) {
 		case ReposInfoAction.SAVE_REPO_NAME: {
 			return { ...state, loading: false, repoName: action.payload };
 		}
-		// case ReposInfoAction.FETCH_FAILURE: {
-		// 	return {...state, loading: false, error: action.payload.error, reposInfoArr: []}
-		// }
 
 		default: {
 			return state;

@@ -10,11 +10,6 @@ export const fetchSuccess = (payload) => ({
 	payload
 });
 
-// export const fetchFailure = (payload) => ({
-// 	type: FETCH_FAILURE,
-// 	payload
-// });
-
 export const getPersonalInfo = (payload) => ({
 	type: 'GET_PERSONAL_INFO',
 	payload
@@ -24,11 +19,3 @@ export const saveUsername = (payload) => ({
 	type: SAVE_USERNAME,
 	payload
 });
-
-// Handle HTTP errors since fetch won't.
-// const handleErrors = (response) => {
-// 	if (!response.ok) {
-// 		throw Error(response.statusText);
-// 	}
-// 	return response;
-// };
